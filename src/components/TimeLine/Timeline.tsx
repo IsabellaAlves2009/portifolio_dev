@@ -25,7 +25,7 @@ const Timeline: React.FC = () => {
         gutterBottom
         color="primary.contrastText"
         marginBottom="60px"
-        > Experiência 
+        id="experience"> Experiência 
         </Typography>
         </Fade>
     <div className="bg-black min-h-screen text-white p-10">
