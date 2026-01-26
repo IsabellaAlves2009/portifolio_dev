@@ -78,7 +78,7 @@ const About = () => {
           <Fade delay={500}>
             <StyledContainer>
               <Typography variant="body1">
-                Olá, me chamo Jhon Herik tenho 18 anos. Minha jornada na
+                Olá, me chamo Jhon Herik tenho 19 anos. Minha jornada na
                 programação teve início aos 13 anos, quando a curiosidade de
                 saber o que vi em código de um "Hack / Script" de Minecraft
                 despertou em mim o interesse de entender o que aquilo fazia.  
