@@ -13,6 +13,11 @@ import { AnimatedBackground } from "../../../components/AnimatedBackground/Anima
 import { Fade, Slide } from "react-awesome-reveal";
 import TextType from "../../../components/Typing/TextType";
 
+// Email constants
+export const RECIPIENT_EMAIL = 'jhonherik006@gmail.com';
+export const EMAIL_SUBJECT = 'Contato via Curriculo - Dúvidas - Projetos';
+export const EMAIL_BODY = 'Olá, como podemos criar juntos?';
+
 // Styled Components
 const StyledHero = styled("div")(({ theme }) => ({
   background: theme.palette.gradient.dark,
@@ -51,10 +56,6 @@ const StyledImg = styled("img")(({ theme }) => ({
 // Main Component
 const Hero = () => {
   // LÓGICA DE EMAIL
-  const RECIPIENT_EMAIL = 'jhonherik006@gmail.com';
-  const EMAIL_SUBJECT = 'Contato via Curriculo - Dúvidas - Projetos';
-  const EMAIL_BODY = 'Olá, como podemos criar juntos?';
-
   const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
   const handleDownloadCv = useCallback(() => {
@@ -90,16 +91,10 @@ const Hero = () => {
             <Box sx={{
               position: { md: "absolute" },
               top: { md: '50%' },
-              maxWidth: { xs: '100%', md: '100%' }, // Mantendo como está
+              maxWidth: { xs: '100%', md: '100%' },
               textAlign: 'center',
-
-              // 🎯 CORREÇÃO PARA O TEXTO EM TELAS GRANDES (1920px)
-              // Ajusta o 'left' e 'transform' especificamente para telas 'xl' (>= 1536px)
-              // Você pode ajustar estes valores percentuais (ex: 55%, 58%, etc.)
-              // e a porcentagem do translateX(-X%) para encontrar o ponto ideal em 1920px.
-              // O valor ideal dependerá do tamanho da fonte e da largura do texto.
-              left: { md: '60%', xl: '55%' }, // Ajusta para a esquerda em telas XL
-              transform: { md: 'translate(-50%, -50%)', xl: 'translate(-40%, -50%)' }, // Ajusta o deslocamento
+              left: { md: '60%', xl: '55%' }, 
+              transform: { md: 'translate(-50%, -50%)', xl: 'translate(-40%, -50%)' },
             }}>
               <Fade>
                 <Typography
@@ -139,7 +134,7 @@ const Hero = () => {
                     }}>I'm a&nbsp;</Box>
                     <Box component="span" sx={{
                       display: 'inline-block',
-                      minWidth: { xs: '300px', sm: '700px' },
+                      minWidth: { xs: '300px', sm: '700px', md: '600px', lg: '500px' },
                       textAlign: 'left',
                       fontSize: {
                       xs: '1.9rem',
@@ -149,7 +144,8 @@ const Hero = () => {
                     }
                     }}>
                       <TextType
-                        textColors={["#aa7fc2ff"]}
+                      style={{ textShadow: "0 0 12px rgba(104, 9, 167, 0.6)" }}
+                        textColors={["#6809a7ff"]}
                         as="span"
                         text={["Future Software Engineer", "Full-Stack Developer", "Enthusiast of Technology"]}
                         typingSpeed={40} deletingSpeed={30} />
@@ -169,9 +165,9 @@ const Hero = () => {
                 sx={{
                   position: {md:"absolute"},
                   bottom: { md: '30%', lg: '33%' },
-                  maxWidth: '100%', // Adicionado para garantir que os botões não se espalhem mais do que o necessário
-                  left: { md: '51%', xl: '46%' }, // Move mais para a esquerda
-                  transform: { md: 'translate(-40%, 50%)', xl: 'translate(-15%, -45%)' }, // Ajusta o deslocamento
+                  maxWidth: '100%',
+                  left: { md: '51%', xl: '46%' },
+                  transform: { md: 'translate(-40%, 50%)', xl: 'translate(-15%, -45%)' },
                 }}
               >
                 {/* Botão Download CV */}

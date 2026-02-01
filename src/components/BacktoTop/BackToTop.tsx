@@ -34,7 +34,7 @@ const BackToTop = () => {
         <Fade in={visible}>
         <Fab
         onClick={scrollToTop}
-        color="secondary"
+        color={"secondary"}
         sx= {{
             position: "fixed",
             bottom: 20,
