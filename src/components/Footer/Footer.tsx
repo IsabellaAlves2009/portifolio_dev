@@ -193,6 +193,11 @@ const BottomText = styled.p`
   color: rgba(255,255,255,0.5);
 `;
 
+const RECIPIENT_EMAIL = 'jhonherik006@gmail.com';
+const EMAIL_SUBJECT = 'Contato via Portfólio - Dúvidas - Projetos - Melhorias - Sugestões';
+const EMAIL_BODY = 'Olá, como podemos criar juntos?';
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -207,7 +212,7 @@ export default function Footer() {
   const socials = [
     { label: "GitHub", href: "https://github.com/jhonherikgc", icon: <FaGithub /> },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jhonherikgc", icon: <FaLinkedin /> },
-    { label: "Email", href: "mailto:jhonherik006@gmail.com", icon: <FaEnvelope /> },
+    { label: "Email", href: `${GMAIL_COMPOSE_URL}`, icon: <FaEnvelope /> },
     { label: "Instagram", href: "https://www.instagram.com/jhonherikgc/", icon: <FaInstagram /> },
     { label: "Discord", href: "https://discord.com/users/1170099561260404848", icon: <FaDiscord /> },
   ];
