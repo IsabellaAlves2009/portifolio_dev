@@ -6,15 +6,9 @@ declare module "@mui/material/styles" {
     gradient: {
       dark: string;
     };
-    footer: {
-      dark: string;
-    };
   }
   interface PaletteOptions {
     gradient?: {
-      dark?: string;
-    };
-    footer?: {
       dark?: string;
     };
   }
@@ -28,16 +22,10 @@ let theme = createTheme({
       
     },
     secondary: {
-      main: '#aa7fc2ff',
-    },
-    background: {
-      default: '#2c2b26',
+      main: '#6809a7ff',
     },
     gradient: {
       dark: 'linear-gradient(to right, #000000, #2F0743);', 
-    },
-    footer: {
-      dark: 'linear-gradient(to right, #000000, #110118ff);',
     },
   },
   typography: {
