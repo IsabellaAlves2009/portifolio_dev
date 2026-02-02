@@ -1,4 +1,4 @@
-# Meu Portfólio Pessoal
+# Portfólio Pessoal
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -13,9 +13,9 @@ Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar m
 
 O projeto está dividido em seções principais para contar minha história como desenvolvedor:
 
-*   **Linha do Tempo:** Uma jornada visual pela minha experiência e aprendizado.
-*   **Habilidades e Ferramentas:** Uma apresentação interativa das tecnologias que domino.
-*   **Projetos:** Uma vitrine dos trabalhos que desenvolvi.
+- **Linha do Tempo:** Uma jornada visual pela minha experiência e aprendizado.
+- **Habilidades e Ferramentas:** Uma apresentação interativa das tecnologias que domino.
+- **Projetos:** Uma vitrine dos trabalhos que desenvolvi.
 
 ## ✨ Funcionalidades Principais
 
@@ -44,6 +44,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 ## 📬 Contato
 
 **Jhon Herik**
+
 - GitHub: @jhonherikgc
 - Linkedin: @jhonherikgc
 
