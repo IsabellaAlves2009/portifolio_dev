@@ -1,3 +1,4 @@
+{/* Componente de Navbar */}
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -39,7 +40,7 @@ const DesktopContainer = styled(motion.div)<{ $isScrolled: boolean }>`
     box-shadow: ${props => props.$isScrolled ? '0 10px 30px rgba(0, 0, 0, 0.5)' : '0 8px 32px rgba(0, 0, 0, 0.2)'};
   }
 `;
-
+{/* Navbar mobile container*/}
 const MobileContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,6 +69,7 @@ const LogoSymbol = styled.div`
   }
 `;
 
+{/* Espaçamento de botões */}
 const NavLinks = styled.div`
   display: flex;
   gap: 2.5rem;
@@ -102,7 +104,7 @@ const LinkItem = styled.a`
     width: 100%;
   }
 `;
-
+{/* Navbar menu = */}
 const MobileMenu = styled(motion.div)`
   display: flex;
   flex-direction: column;

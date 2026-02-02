@@ -83,6 +83,7 @@ const StatCard = styled("div")(({ theme }) => ({
 // --- Main Component --- //
 
 const About = () => {
+  {/* Secção Sobre*/}
   return (
     <StyledAbout id="about-me">
       <Fade delay={400} triggerOnce>
@@ -94,7 +95,7 @@ const About = () => {
       </Fade>
 
       <StyledContentWrapper>
-        {/* Texto de Biografia */}
+        {/* Texto da Biografia */}
         <Slide direction="left" triggerOnce>
           <StyledContainer>
             <Typography variant="body1" lineHeight={1.8}>
@@ -119,6 +120,7 @@ const About = () => {
         {/* Dashboard de Estatísticas */}
         <Slide direction="right" triggerOnce>
           <StatsGrid>
+            {/* Cards */}
             <StatCard>
               <h2>10+</h2>
               <p>Projetos</p>

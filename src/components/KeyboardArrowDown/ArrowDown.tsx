@@ -15,7 +15,7 @@ const ScrollDown = ({ targetId }: ScrollDownProps) => {
   const handleClick = () => {
     document.querySelector(targetId)?.scrollIntoView({ behavior: "smooth" });
   };
-// Click button descer pagina
+  // Componente de seta para baixo com animação de bounce
   return (
     <Box
       onClick={handleClick}
@@ -26,7 +26,7 @@ const ScrollDown = ({ targetId }: ScrollDownProps) => {
         transform: "translateX(-50%)",
         cursor: "pointer",
         color: "white",
-        display: {xs: "none", md: "block"},
+        display: { xs: "none", md: "block" },
         animation: `${bounce} 2s infinite`,
       }}
     >

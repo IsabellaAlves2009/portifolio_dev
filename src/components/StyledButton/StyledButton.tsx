@@ -6,7 +6,9 @@ interface StyledButtonProps {
   onClick: () => void;
 }
 
-// Renomeamos o botão estilizado para evitar conflito com o componente
+{
+  /* Lógica & espaçamento dos botões */
+}
 const Button = styled("button")(({ theme }) => ({
   backgroundColor: "transparent",
   border: `1px solid ${theme.palette.primary.contrastText}`,
@@ -19,18 +21,13 @@ const Button = styled("button")(({ theme }) => ({
   justifyContent: "center",
   gap: "10px",
   cursor: "pointer",
-  '&:hover': {
+  "&:hover": {
     backgroundColor: "#2F0743",
   },
 }));
 
 const StyledButton: React.FC<StyledButtonProps> = ({ children, onClick }) => {
-  return (
-    <Button onClick={onClick}>
-      {children}
-    </Button>
-  );
+  return <Button onClick={onClick}>{children}</Button>;
 };
 
 export default StyledButton;
-

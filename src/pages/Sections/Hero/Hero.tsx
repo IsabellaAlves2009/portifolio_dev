@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import cvFile from "../../../assets/images/jhon_castro.pdf"
+import cvFile from "../../../assets/images/jhon_castro.pdf";
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 
 import ScrollDown from "../../../components/KeyboardArrowDown/ArrowDown";
@@ -14,9 +14,9 @@ import { Fade, Slide } from "react-awesome-reveal";
 import TextType from "../../../components/Typing/TextType";
 
 // Email constants
-export const RECIPIENT_EMAIL = 'jhonherik006@gmail.com';
-export const EMAIL_SUBJECT = 'Contato via Curriculo - Dúvidas - Projetos';
-export const EMAIL_BODY = 'Olá, como podemos criar juntos?';
+export const RECIPIENT_EMAIL = "jhonherik006@gmail.com";
+export const EMAIL_SUBJECT = "Contato via Curriculo - Dúvidas - Projetos";
+export const EMAIL_BODY = "Olá, como podemos criar juntos?";
 
 // Styled Components
 const StyledHero = styled("div")(({ theme }) => ({
@@ -32,9 +32,6 @@ const StyledHero = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.up("lg")]: {
     paddingTop: "25px",
-    // Para telas muito grandes (como 1920px), você pode querer limitar a largura do conteúdo
-    // Sem refatorar, isso é mais difícil de controlar no Container,
-    // mas o Container "lg" já tem um max-width fixo no tema, o que ajuda.
   },
 }));
 
@@ -44,12 +41,10 @@ const StyledImg = styled("img")(({ theme }) => ({
   borderRadius: "50%",
   border: `1px solid ${theme.palette.primary.contrastText}`,
   [theme.breakpoints.up("md")]: {
-    // Mantendo suas propriedades existentes, o que pode estar contribuindo para o posicionamento
-    // mas não as alteraremos diretamente aqui.
     paddingLeft: "-100px",
     marginLeft: "-100px",
-    width:"100%",
-    marginTop:"-15px"
+    width: "100%",
+    marginTop: "-15px",
   },
 }));
 
@@ -59,9 +54,9 @@ const Hero = () => {
   const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
   const handleDownloadCv = useCallback(() => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = cvFile;
-    link.download = 'jhon_castro.pdf';
+    link.download = "jhon_castro.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -88,69 +83,94 @@ const Hero = () => {
           {/* Grid do Texto e Botões */}
           {/*@ts-ignore*/}
           <Grid item xs={12} md={6}>
-            <Box sx={{
-              position: { md: "absolute" },
-              top: { md: '50%' },
-              maxWidth: { xs: '100%', md: '100%' },
-              textAlign: 'center',
-              left: { md: '60%', xl: '55%' }, 
-              transform: { md: 'translate(-50%, -50%)', xl: 'translate(-40%, -50%)' },
-            }}>
+            {/* Lógica de posicionamento de telas*/}
+            <Box
+              sx={{
+                position: { md: "absolute" },
+                top: { md: "50%" },
+                maxWidth: { xs: "100%", md: "100%" },
+                textAlign: "center",
+                left: { md: "60%", xl: "55%" },
+                transform: {
+                  md: "translate(-50%, -50%)",
+                  xl: "translate(-40%, -50%)",
+                },
+              }}
+            >
               <Fade>
                 <Typography
                   color="primary.contrastText"
                   variant="h1"
                   textAlign="center"
-                  pb={{xs: 2, md: 0}}
+                  pb={{ xs: 2, md: 0 }}
                   sx={{
-                    whiteSpace: { xs: 'normal', md: 'nowrap' },
+                    whiteSpace: { xs: "normal", md: "nowrap" },
                     fontSize: {
-                      xs: '1.9rem',
-                      sm: '3rem',
-                      md: '3.5rem',
-                      lg: '5rem'
-                    }
+                      xs: "1.9rem",
+                      sm: "3rem",
+                      md: "3.5rem",
+                      lg: "5rem",
+                    },
                   }}
-                  mb={{md: -2}}
+                  mb={{ md: -2 }}
                 >
                   Jhon Herik Gomes de Castro
                 </Typography>
               </Fade>
               <Fade delay={500}>
-                  <Typography
-                    color="primary.contrastText"
-                    variant="h2"
-                    sx={{whiteSpace: 'nowrap'}}
-                  >
-                    <Box component="span"
+                <Typography
+                  color="primary.contrastText"
+                  variant="h2"
+                  sx={{ whiteSpace: "nowrap" }}
+                >
+                  <Box
+                    component="span"
                     sx={{
-                      marginLeft: '-10px',
-                      fontSize:{
-                      xs: '1.9rem',
-                      sm: '3rem',
-                      md: '3.0rem',
-                      lg: '4rem'
-                    }
-                    }}>I'm a&nbsp;</Box>
-                    <Box component="span" sx={{
-                      display: 'inline-block',
-                      minWidth: { xs: '300px', sm: '700px', md: '600px', lg: '500px' },
-                      textAlign: 'left',
+                      marginLeft: "-10px",
                       fontSize: {
-                      xs: '1.9rem',
-                      sm: '3rem',
-                      md: '3.5rem',
-                      lg: '4rem'
-                    }
-                    }}>
-                      <TextType
+                        xs: "1.9rem",
+                        sm: "3rem",
+                        md: "3.0rem",
+                        lg: "4rem",
+                      },
+                    }}
+                  >
+                    I'm a&nbsp;
+                  </Box>
+                  <Box
+                    component="span"
+                    sx={{
+                      display: "inline-block",
+                      minWidth: {
+                        xs: "300px",
+                        sm: "700px",
+                        md: "600px",
+                        lg: "500px",
+                      },
+                      textAlign: "left",
+                      fontSize: {
+                        xs: "1.9rem",
+                        sm: "3rem",
+                        md: "3.5rem",
+                        lg: "4rem",
+                      },
+                    }}
+                  >
+                    {/* Logica do typing text com arrays de frases */}
+                    <TextType
                       style={{ textShadow: "0 0 12px rgba(104, 9, 167, 0.6)" }}
-                        textColors={["#6809a7ff"]}
-                        as="span"
-                        text={["Future Software Engineer", "Full-Stack Developer", "Enthusiast of Technology"]}
-                        typingSpeed={40} deletingSpeed={30} />
-                    </Box>
-                  </Typography>
+                      textColors={["#6809a7ff"]}
+                      as="span"
+                      text={[
+                        "Future Software Engineer",
+                        "Full-Stack Developer",
+                        "Enthusiast of Technology",
+                      ]}
+                      typingSpeed={40}
+                      deletingSpeed={30}
+                    />
+                  </Box>
+                </Typography>
               </Fade>
             </Box>
 
@@ -163,11 +183,14 @@ const Hero = () => {
                 spacing={3}
                 pt={3}
                 sx={{
-                  position: {md:"absolute"},
-                  bottom: { md: '30%', lg: '33%' },
-                  maxWidth: '100%',
-                  left: { md: '51%', xl: '46%' },
-                  transform: { md: 'translate(-40%, 50%)', xl: 'translate(-15%, -45%)' },
+                  position: { md: "absolute" },
+                  bottom: { md: "30%", lg: "33%" },
+                  maxWidth: "100%",
+                  left: { md: "51%", xl: "46%" },
+                  transform: {
+                    md: "translate(-40%, 50%)",
+                    xl: "translate(-15%, -45%)",
+                  },
                 }}
               >
                 {/* Botão Download CV */}
@@ -182,21 +205,21 @@ const Hero = () => {
                 <Grid>
                   {/* @ts-expect-error Prop 'component' não tipada. */}
                   <StyledButton component="div">
-                        <a
-                            href={GMAIL_COMPOSE_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                textDecoration: 'none',
-                                color: 'inherit',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}
-                        >
-                            <MailOutlineIcon />
-                            <Typography>Contact me</Typography>
-                        </a>
+                    <a
+                      href={GMAIL_COMPOSE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                      }}
+                    >
+                      <MailOutlineIcon />
+                      <Typography>Contact me</Typography>
+                    </a>
                   </StyledButton>
                 </Grid>
 
@@ -205,19 +228,19 @@ const Hero = () => {
                   {/* @ts-expect-error Prop 'component' não tipada.*/}
                   <StyledButton component="div">
                     <a
-                        href="https://www.linkedin.com/in/jhonherikgc/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                            textDecoration: 'none',
-                            color: 'inherit',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                        }}
+                      href="https://www.linkedin.com/in/jhonherikgc/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                      }}
                     >
-                        <LinkedInIcon />
-                        <Typography>Linkedin</Typography>
+                      <LinkedInIcon />
+                      <Typography>Linkedin</Typography>
                     </a>
                   </StyledButton>
                 </Grid>
@@ -227,19 +250,19 @@ const Hero = () => {
                   {/* @ts-expect-error Prop 'component' não tipada. */}
                   <StyledButton component="div">
                     <a
-                        href="https://github.com/jhonherikgc"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                            textDecoration: 'none',
-                            color: 'inherit',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                        }}
+                      href="https://github.com/jhonherikgc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                      }}
                     >
-                        <GitHubIcon />
-                        <Typography>Github</Typography>
+                      <GitHubIcon />
+                      <Typography>Github</Typography>
                     </a>
                   </StyledButton>
                 </Grid>

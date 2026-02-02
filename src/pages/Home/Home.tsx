@@ -1,3 +1,4 @@
+{/* Imports de páginas e componentes */}
 import Navbar from "../../components/Navbar"
 import Hero from "../Sections/Hero/Hero"
 import About from "../Sections/About/About"
@@ -8,7 +9,7 @@ import Timeline from "../../components/TimeLine/Timeline"
 import Footer  from "../../components/Footer/Footer"
 
 const Home = () => {
-
+  {/* Paginas e componentes ligados */}
   return (
     <>
     <Navbar/>

@@ -1,22 +1,22 @@
 // src/components/SkillsSection.tsx
 import { Fade, Slide } from "react-awesome-reveal";
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import htmlIcon from '../../../assets/images/HTML.svg';
-import cssIcon from '../../../assets/images/CSS.svg';
-import bootsIcon from '../../../assets/images/Bootstrap.svg'
-import jsIcon from '../../../assets/images/JavaScript.svg';
-import tsIcon from '../../../assets/images/TypeScript.svg';
-import reactIcon from '../../../assets/images/React-dark.svg'
-import viteIcon from '../../../assets/images/Vite-Dark.svg'
-import pythonIcon from '../../../assets/images/Python-Dark.svg'
-import dockerIcon from '../../../assets/images/Docker.svg'
-import LinuxIcon from '../../../assets/images/Linux-Dark.svg'
-import gitIcon from '../../../assets/images/Git.svg'
-import githubIcon from '../../../assets/images/Github-Dark.svg'
-import flaskIcon from '../../../assets/images/Flask-Dark.svg'
-import tailwindIcon from '../../../assets/images/Tailwind.svg'
-import nodejsIcon from '../../../assets/images/NodeJS-Dark.svg'
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import htmlIcon from "../../../assets/images/HTML.svg";
+import cssIcon from "../../../assets/images/CSS.svg";
+import bootsIcon from "../../../assets/images/Bootstrap.svg";
+import jsIcon from "../../../assets/images/JavaScript.svg";
+import tsIcon from "../../../assets/images/TypeScript.svg";
+import reactIcon from "../../../assets/images/React-dark.svg";
+import viteIcon from "../../../assets/images/Vite-Dark.svg";
+import pythonIcon from "../../../assets/images/Python-Dark.svg";
+import dockerIcon from "../../../assets/images/Docker.svg";
+import LinuxIcon from "../../../assets/images/Linux-Dark.svg";
+import gitIcon from "../../../assets/images/Git.svg";
+import githubIcon from "../../../assets/images/Github-Dark.svg";
+import flaskIcon from "../../../assets/images/Flask-Dark.svg";
+import tailwindIcon from "../../../assets/images/Tailwind.svg";
+import nodejsIcon from "../../../assets/images/NodeJS-Dark.svg";
 
 interface Skill {
   id: string;
@@ -25,6 +25,7 @@ interface Skill {
   clickText: string;
   expText: string;
 }
+
 // Skills icons
 const skillsData: Skill[] = [
   { id : 'Html', image: htmlIcon, hoverText: 'HTML: Estrutura base de todas as páginas web.', clickText: 'O HTML foi a minha porta de entrada para o desenvolvimento front-end. Através dele, não só aprendi a estruturar páginas web, mas também a compreender conceitos essenciais como tags, protocolos de rede e a importância de uma base sólida para qualquer projeto.', expText: '2 anos e 5 meses.' },
@@ -59,14 +60,14 @@ const StyledH1 = styled.h1`
   }
 `;
 
-// Section container 
+// Section container
 const SkillsSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: linear-gradient(to right, #000000, #2F0743);
+  background: linear-gradient(to right, #000000, #2f0743);
 `;
 
 // Skills container
@@ -99,11 +100,11 @@ const ExperienceContainer = styled.div`
   font-size: 20px;
 
   @media (max-width: 768px) {
-  text-align: center;
-  margin: 0 0 20px 0;
-  font-family: Helvetica Neue;
-  font-size: 20px;
-  margin-bottom: -50%;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    margin-bottom: -50%;
   }
 `;
 
@@ -123,7 +124,7 @@ const VerticalCarouselContainer = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
@@ -159,6 +160,7 @@ const ImageWrapper = styled.div`
     margin-top: 50px;
   }
 `;
+
 //Text habilidades container
 
 const TextContainer = styled.div`
@@ -176,7 +178,7 @@ const TextContainer = styled.div`
   text-align: left;
   white-space: pre-wrap;
   color: white;
-  
+
   @media (max-width: 768px) {
     margin-bottom: 50%; /* Remove a margem inferior excessiva */
     width: 70%;
@@ -188,117 +190,119 @@ const TextContainer = styled.div`
 // Logicas
 
 const SkillsSection: React.FC = () => {
-    const [displayText, setDisplayText] = useState<string>("Passe o mouse ou clique em uma das habilidades para saber mais!");
-    const [isClicked, setIsClicked] = useState<boolean>(false);
-    const [displayExp, setDisplayExp] = useState<string> ('')
-    
-    const carouselRef = useRef<HTMLDivElement>(null);
+  const [displayText, setDisplayText] = useState<string>(
+    "Passe o mouse ou clique em uma das habilidades para saber mais!",
+  );
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [displayExp, setDisplayExp] = useState<string>("");
 
-    // Efeito para criar a rolagem automática
-    useEffect(() => {
-        const carousel = carouselRef.current;
-        if (!carousel) return;
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-        // Timer para rolagem automática definido
-        let scrollInterval: ReturnType<typeof setInterval>;
+  // Efeito para criar a rolagem automática
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
-        const startAutoScroll = () => {
-            scrollInterval = setInterval(() => {
-                const isMobile = window.innerWidth <= 768;
-                if (isMobile) {
-                    const listWidth = carousel.scrollWidth / 2;
-                    // Se a rolagem chegar ao fim da primeira lista, volta pro topo
-                    if (carousel.scrollLeft >= listWidth) {
-                        carousel.scrollLeft -= listWidth;
-                    } else {
-                        carousel.scrollLeft += 1;
-                    }
-                } else {
-                    const listHeight = carousel.scrollHeight / 2;
-                    if (carousel.scrollTop >= listHeight) {
-                        carousel.scrollTop -= listHeight;
-                    } else {
-                        carousel.scrollTop += 1;
-                    }
-                }
-            }, 30);
-        };
+    // Timer para rolagem automática definido
+    let scrollInterval: ReturnType<typeof setInterval>;
 
-        const stopAutoScroll = () => {
-            clearInterval(scrollInterval);
-        };
-        
-        // Inicia a rolagem automática
-        startAutoScroll();
-        
-        // Pausa a rolagem no hover
-        carousel.addEventListener('mouseenter', stopAutoScroll);
-        carousel.addEventListener('mouseleave', startAutoScroll);
-
-        // Limpeza: remove os listeners e o timer quando o componente é desmontado
-        return () => {
-            stopAutoScroll();
-            carousel.removeEventListener('mouseenter', stopAutoScroll);
-            carousel.removeEventListener('mouseleave', startAutoScroll);
-        };
-    }, []);
-
-    const handleMouseEnter = (text: string, exp: string) => {
-        if (!isClicked) {
-          setDisplayExp(exp || 'Tempo não informado.')
-          setDisplayText(text);
+    const startAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          const listWidth = carousel.scrollWidth / 2;
+          // Se a rolagem chegar ao fim da primeira lista, volta pro topo
+          if (carousel.scrollLeft >= listWidth) {
+            carousel.scrollLeft -= listWidth;
+          } else {
+            carousel.scrollLeft += 1;
+          }
+        } else {
+          const listHeight = carousel.scrollHeight / 2;
+          if (carousel.scrollTop >= listHeight) {
+            carousel.scrollTop -= listHeight;
+          } else {
+            carousel.scrollTop += 1;
+          }
         }
+      }, 30);
     };
 
-    const handleMouseLeave = () => {
-        if (!isClicked) {
-          setDisplayText("Passe o mouse ou clique em uma das habilidades para saber mais!");
-          setDisplayExp('');
-        }
+    const stopAutoScroll = () => {
+      clearInterval(scrollInterval);
     };
 
-    const handleClick = (text: string, exp: string) => {
-        setDisplayText(text);
-        setDisplayExp(exp || 'Tempo não informado.')
-        setIsClicked(true);
-        setTimeout(() => {
-          setIsClicked(false);
-        }, 0);
+    // Inicia a rolagem automática
+    startAutoScroll();
+
+    // Pausa a rolagem no hover
+    carousel.addEventListener("mouseenter", stopAutoScroll);
+    carousel.addEventListener("mouseleave", startAutoScroll);
+
+    // Limpeza: remove os listeners e o timer quando o componente é desmontado
+    return () => {
+      stopAutoScroll();
+      carousel.removeEventListener("mouseenter", stopAutoScroll);
+      carousel.removeEventListener("mouseleave", startAutoScroll);
     };
-// <main>
-    return (
-        <SkillsSectionWrapper>
-          <Fade delay={400}>
-            <Slide direction="up">
-          <StyledH1 id="skills">
-            Linguagens & Ferramentas
-          </StyledH1>
-          </Slide>
+  }, []);
 
-          <ExperienceContainer>
-          Experiência: {displayExp}
-          </ExperienceContainer>
+  const handleMouseEnter = (text: string, exp: string) => {
+    if (!isClicked) {
+      setDisplayExp(exp || "Tempo não informado.");
+      setDisplayText(text);
+    }
+  };
 
-          <SkillsContainer>
-            <VerticalCarouselContainer ref={carouselRef}>
-              {loopSkillsData.map((skill, index) => (
-                <ImageWrapper 
+  const handleMouseLeave = () => {
+    if (!isClicked) {
+      setDisplayText(
+        "Passe o mouse ou clique em uma das habilidades para saber mais!",
+      );
+      setDisplayExp("");
+    }
+  };
+
+  const handleClick = (text: string, exp: string) => {
+    setDisplayText(text);
+    setDisplayExp(exp || "Tempo não informado.");
+    setIsClicked(true);
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 0);
+  };
+  // <main>
+  return (
+    <SkillsSectionWrapper>
+      <Fade delay={400}>
+        <Slide direction="up">
+          <StyledH1 id="skills">Linguagens & Ferramentas</StyledH1>
+        </Slide>
+
+        <ExperienceContainer>Experiência: {displayExp}</ExperienceContainer>
+
+        <SkillsContainer>
+          <VerticalCarouselContainer ref={carouselRef}>
+            {loopSkillsData.map((skill, index) => (
+              <ImageWrapper
                 key={`${skill.id}-${index}`}
-                onMouseEnter={() => handleMouseEnter(skill.hoverText, skill.expText)}
+                onMouseEnter={() =>
+                  handleMouseEnter(skill.hoverText, skill.expText)
+                }
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick(skill.clickText, skill.expText)}
-                >
-                  <img src={skill.image} alt={skill.id} />
-                </ImageWrapper>
-              ))}
-            </VerticalCarouselContainer>
-            <TextContainer>
-              <p>{displayText}</p>
-            </TextContainer>
-          </SkillsContainer>
-          </Fade>
-        </SkillsSectionWrapper>
-    );
+              >
+                <img src={skill.image} alt={skill.id} />
+              </ImageWrapper>
+            ))}
+          </VerticalCarouselContainer>
+          <TextContainer>
+            <p>{displayText}</p>
+          </TextContainer>
+        </SkillsContainer>
+      </Fade>
+    </SkillsSectionWrapper>
+  );
 };
 
 export default SkillsSection;

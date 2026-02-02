@@ -1,8 +1,10 @@
 'use client';
 // @ts-ignore
 import { ElementType, useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
+{/* Biblioteca de animação */}
 import { gsap } from 'gsap';
 
+{/* interfaces, tipagens e main componente */}
 interface TextTypeProps {
   className?: string;
   showCursor?: boolean;
