@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "greeting": "Jhon Herik Gomes de Castro",
+    "prefix": "Eu sou",
+    "roles": [
+      "um Eng. de Software em formação",
+      "um Desenvolvedor Full Stack",
+      "um Entusiasta da Tecnologia"
+    ],
+    "downloadCV": "Descarregar CV",
+    "contact": "Entre em contato",
+    "linkedin": "Linkedin",
+    "github": "Github"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "bio": "Minha jornada na programação começou com uma pergunta: \"Como isso funciona?\". Aos 13 anos, essa dúvida me levou aos códigos de scripts de jogos. Comecei a me dedicar de verdade aos 17 e, hoje, aos 19, essa mesma sede de aprendizado me guia na criação de aplicações completas, do Front ao Back-end.",
+    "hobbies": "Nem só de console.log vive o homem: nas horas vagas, estou sempre jogando, ouvindo música, lendo ou explorando novas tecnologias.",
+    "quote": "\"Sou só um vírus, querendo escapar, dos programadores da vida.\" – Wesley D'Amico",
+    "stats": {
+      "projects": "Projetos",
+      "experience": "Anos de experiência",
+      "lines": "Linhas de código",
+      "coffee": "Café consumido"
+    }
+  },
+  "skills": {
+    "title": "Linguagens & Ferramentas",
+    "experience": "Experiência",
+    "defaultText": "Passe o mouse ou clique em uma das habilidades para saber mais!",
+    "items": {
+      "html": {
+        "hover": "HTML: Estrutura base de todas as páginas web.",
+        "click": "O HTML foi a minha porta de entrada para o desenvolvimento front-end. Através dele, não só aprendi a estruturar páginas web, mas também a compreender conceitos essenciais como tags, protocolos de rede e a importância de uma base sólida para qualquer projeto.",
+        "experience": "2 anos e 5 meses."
+      },
+      "css": {
+        "hover": "CSS: Estilização de componentes web.",
+        "click": "Com CSS, aprendi a transformar o visual de um projeto. Sem ele seu site simplesmente não ganha vida nem tampouco cor, estilo, interações básicas de imagens e outras coisas visuais. Aprendi técnicas avançadas como FlexBox e responsavidade com o MediaQueries, essa linguagem me permite criar designs que são não apenas bonitos, mas também funcionais e adaptáveis a qualquer tela!",
+        "experience": "2 anos e 5 meses."
+      },
+      "bootstrap": {
+        "hover": "Bootstrap: Framework de CSS para desenvolvimento rápido.",
+        "click": "Bootstrap foi a solução que encontrei para acelerar o desenvolvimento de projetos, garantindo designs responsivos de forma rápida e eficiente. Esse framework me permitiu focar na funcionalidade, sabendo que a parte visual já estaria bem estruturada, aprender a usar esse framework foi um grande passo durante meu aprendizado tornando assim mais fácil de saber a disponibilidade e usuabilidade de meu código.",
+        "experience": "1 ano e 2 meses."
+      },
+      "tailwind": {
+        "hover": "Tailwind: Framework de CSS para desenvolvimento web com flexibilidades para design.",
+        "click": "O Tailwind tem uma certa flexibilidade quando se trata de deixar o visual mais bonito, mais otimizado e uma semântica simples de entender. Embora deixando seu código mais verboso, tendo um certo conhecimento de CSS me ajudou a entender melhor e a estruturar minhas paginas com Tailwind.",
+        "experience": "1 mês."
+      },
+      "javascript": {
+        "hover": "JavaScript: Adiciona interatividade e dinamismo.",
+        "click": "Comecei aprender o tão famoso JS pelo youtube, principios básicos e logo após me interessar tanto comprei um curso onde lá aprendi muita das coisas que aplico hoje. O JavaScript me abriu um mundo de possibilidades, permitindo que eu adicionasse lógica e interatividade às minhas aplicações. Com essa linguagem, explorei a manipulação do DOM, a criação de funcionalidades dinâmicas e a resolução de desafios de programação, tornando-se uma base essencial para a minha evolução.",
+        "experience": "2 anos."
+      },
+      "nodejs": {
+        "hover": "Nodejs o motor V8 do JavaScript",
+        "click": "O Nodejs pode executar o JavaScript fora da web, trabalhando ao lado do servidor (SSR). Ainda com pouco experiência, procuro aprender mais e mais sobre Nodejs. Com o Nodejs tenho mais escalabilidades de consumir APIs e manter meu projeto conectado com o backend / base de dados.",
+        "experience": "+- 1 mes."
+      },
+      "typescript": {
+        "hover": "TypeScript: Superconjunto de JS com tipagem estática.",
+        "click": "O TypeScript é o JavaScript mais forte! Ele se tornou uma ferramenta indispensável para garantir a segurança e a escalabilidade dos meus projetos. Ao adicionar a tipagem estática, ele me ajuda a prever e corrigir erros, resultando em um código mais robusto, organizado e fácil de manter.",
+        "experience": "2 meses."
+      },
+      "react": {
+        "hover": "ReactJS: Biblioteca para construir interfaces de usuário.",
+        "click": "ReactJS é uma biblioteca JavaScript. Com ReactJS, aprendi a construir interfaces de usuário modernas e eficientes. A abordagem baseada em componentes me permite desenvolver aplicações de página única (SPAs) de forma modular, reutilizável e com alto desempenho, facilitando a criação de experiências interativas e complexas.",
+        "experience": "2 meses."
+      },
+      "vite": {
+        "hover": "Vite: Ferramenta de build frontend.",
+        "click": "Vite é a minha ferramenta de build de escolha para projetos front-end. Sua velocidade e otimização do ambiente de desenvolvimento me permitem ter um feedback instantâneo sobre as mudanças no código, tornando o processo de criação mais ágil e produtivo.",
+        "experience": "2 meses."
+      },
+      "python": {
+        "hover": "Python: Linguagem de programação versátil e poderosa.",
+        "click": "Python é uma linguagem extremamente versátil que utilizo para diversas tarefas, desde a automação de scripts até o desenvolvimento de aplicações web. Sua sintaxe clara e a vasta quantidade de bibliotecas me permitem resolver problemas de forma eficiente em diferentes contextos. Python é uma linguagem bastante presente nos estudos / trabalhos de CyberSegurança que também é uma área que tenho interesse!",
+        "experience": "9 meses."
+      },
+      "flask": {
+        "hover": "Flask: Microframework web em Python.",
+        "click": "Flask é o microframework de Python que utilizo para criar aplicações web de forma rápida e descomplicada. Sua simplicidade me permite focar na lógica do negócio, sendo ideal para construir APIs e protótipos com um código limpo e minimalista.",
+        "experience": "3 meses."
+      },
+      "docker": {
+        "hover": "Docker: Plataforma para empacotar aplicações.",
+        "click": "Docker é uma ferramenta essencial para garantir a consistência dos meus projetos em diferentes ambientes. Com a sua tecnologia de contêineres, posso empacotar minhas aplicações com todas as suas dependências, facilitando a implantação e a colaboração, eliminando problemas de compatibilidade. Comecei a aprender Docker porque vi que talvez mais para frente iria me ser útil, com o Docker me fez entender e resolver problemas como \"Na minha máquina não funciona!\"",
+        "experience": "4 meses."
+      },
+      "git": {
+        "hover": "Git: Sistema de controle de versão distribuído.",
+        "click": "O Git é a minha principal ferramenta de controle de versão. Ele me permite rastrear mudanças no código, colaborar de forma eficiente em equipe e gerenciar o histórico de desenvolvimento dos meus projetos, garantindo que eu possa voltar a qualquer estado anterior do código. O Git é uma ferramenta que facilita muito o trabalho em equipe e o controle de projetos, é inegável que é uma das ferramentas obrigatórias para um programador que preze sua carreira.",
+        "experience": "1 ano e 5 meses."
+      },
+      "github": {
+        "hover": "Github: Plataforma de hospedagem de código.",
+        "click": "Utilizo o GitHub como a minha plataforma central para hospedagem e colaboração de código. Ele não só facilita o compartilhamento dos meus projetos, mas também me permite contribuir para a comunidade open-source e organizar meu portfólio de forma profissional.",
+        "experience": "2 anos."
+      },
+      "linux": {
+        "hover": "Linux: Sistema operacional de código aberto.",
+        "click": "Utilizei o Linux por pouco tempo porém me apaixonei, A sua flexibilidade, linha de comando robusta e a vasta comunidade de desenvolvedores me proporcionam um ambiente de trabalho poderoso, adaptável, rápido e leve ideal para programar e gerenciar servidores, Aprendi principios básicos de terminal e algumas distribuições Linux.",
+        "experience": "6 meses."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "project1": {
+      "description": "Projeto de 'Cópia' do Site do Corinthians. Desenvolvido atráves de estudos e prática após termino de um curso do Youtube! O projeto consiste em recriar o site do zero porém com suas ideias de forma simples."
+    },
+    "project2": {
+      "description": "Chat-Bot Imersão Alura 2025 - Desenvolvido em Python durante imersão gratuita da Alura."
+    },
+    "project3": {
+      "description": "TO-DO List - Projeto realizado durante estágio na Câmara Municipal, focando em design e lógica de programação."
+    },
+    "project4": {
+      "description": "Jafetech - Sistema de Licitação - Plataforma de Gestão de Licitações."
+    }
+  },
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  }
+}

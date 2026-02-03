@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "greeting": "Jhon Herik Gomes de Castro",
+    "prefix": "I'm",
+    "roles": [
+      "a Future Software Engineer",
+      "a Full Stack Developer",
+      "a Technology Enthusiast"
+    ],
+    "downloadCV": "Download CV",
+    "contact": "Get in Touch",
+    "linkedin": "Linkedin",
+    "github": "Github"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "My journey in programming started with a question: \"How does this work?\". At 13 years old, this question led me to video game script codes. I started dedicating myself seriously at 17 and, today, at 19, this same thirst for learning guides me in creating complete applications, from Front to Back-end.",
+    "hobbies": "Not only console.log lives man: in my spare time, I'm always playing, listening to music, reading or exploring new technologies.",
+    "quote": "\"I'm just a virus, wanting to escape, from the programmers of life.\" – Wesley D'Amico",
+    "stats": {
+      "projects": "Projects",
+      "experience": "Years of Experience",
+      "lines": "Lines of Code",
+      "coffee": "Coffee Consumed"
+    }
+  },
+  "skills": {
+    "title": "Languages & Tools",
+    "experience": "Experience",
+    "defaultText": "Hover or click on a skill to learn more!",
+    "items": {
+      "html": {
+        "hover": "HTML: Basic structure of all web pages.",
+        "click": "HTML was my gateway to front-end development. Through it, I not only learned to structure web pages, but also to understand essential concepts like tags, network protocols, and the importance of a solid foundation for any project.",
+        "experience": "2 years and 5 months."
+      },
+      "css": {
+        "hover": "CSS: Styling web components.",
+        "click": "With CSS, I learned to transform the visual appearance of a project. Without it, your site simply doesn't come to life or gain color, style, basic image interactions, and other visual things. I learned advanced techniques like FlexBox and responsiveness with MediaQueries. This language allows me to create designs that are not only beautiful but also functional and adaptable to any screen!",
+        "experience": "2 years and 5 months."
+      },
+      "bootstrap": {
+        "hover": "Bootstrap: CSS framework for rapid development.",
+        "click": "Bootstrap was the solution I found to accelerate project development, ensuring responsive designs quickly and efficiently. This framework allowed me to focus on functionality, knowing that the visual part would already be well structured. Learning to use this framework was a major step in my learning process, making it easier to understand and ensure the availability and usability of my code.",
+        "experience": "1 year and 2 months."
+      },
+      "tailwind": {
+        "hover": "Tailwind: CSS framework for web development with flexibility for design.",
+        "click": "Tailwind has a certain flexibility when it comes to making the visual more beautiful, more optimized, and with simple semantics to understand. Although it makes your code more verbose, having some CSS knowledge helped me understand better and structure my pages with Tailwind.",
+        "experience": "1 month."
+      },
+      "javascript": {
+        "hover": "JavaScript: Adds interactivity and dynamism.",
+        "click": "I started learning the famous JS on YouTube with basic principles, and later became so interested that I bought a course where I learned many of the things I apply today. JavaScript opened a world of possibilities for me, allowing me to add logic and interactivity to my applications. With this language, I explored DOM manipulation, creating dynamic features, and solving programming challenges, becoming an essential foundation for my evolution.",
+        "experience": "2 years."
+      },
+      "nodejs": {
+        "hover": "Nodejs: The V8 engine of JavaScript",
+        "click": "Nodejs can execute JavaScript outside the web, working on the server side (SSR). Still with little experience, I seek to learn more and more about Nodejs. With Nodejs, I have more scalability to consume APIs and keep my project connected with the backend/database.",
+        "experience": "+- 1 month."
+      },
+      "typescript": {
+        "hover": "TypeScript: Superset of JS with static typing.",
+        "click": "TypeScript is stronger JavaScript! It has become an indispensable tool for ensuring the safety and scalability of my projects. By adding static typing, it helps me predict and fix errors, resulting in more robust, organized, and easy-to-maintain code.",
+        "experience": "2 months."
+      },
+      "react": {
+        "hover": "ReactJS: Library for building user interfaces.",
+        "click": "ReactJS is a JavaScript library. With ReactJS, I learned to build modern and efficient user interfaces. The component-based approach allows me to develop single-page applications (SPAs) in a modular, reusable, and high-performance manner, facilitating the creation of interactive and complex experiences.",
+        "experience": "2 months."
+      },
+      "vite": {
+        "hover": "Vite: Frontend build tool.",
+        "click": "Vite is my tool of choice for front-end projects. Its speed and optimization of the development environment allow me to have instant feedback on code changes, making the creation process more agile and productive.",
+        "experience": "2 months."
+      },
+      "python": {
+        "hover": "Python: Versatile and powerful programming language.",
+        "click": "Python is an extremely versatile language that I use for various tasks, from script automation to web application development. Its clear syntax and vast amount of libraries allow me to solve problems efficiently in different contexts. Python is a language that is quite present in CyberSecurity studies/work, which is also an area I'm interested in!",
+        "experience": "9 months."
+      },
+      "flask": {
+        "hover": "Flask: Python web microframework.",
+        "click": "Flask is the Python microframework I use to create web applications quickly and simply. Its simplicity allows me to focus on business logic, being ideal for building APIs and prototypes with clean and minimalist code.",
+        "experience": "3 months."
+      },
+      "docker": {
+        "hover": "Docker: Platform for packaging applications.",
+        "click": "Docker is an essential tool to ensure the consistency of my projects in different environments. With its container technology, I can package my applications with all their dependencies, facilitating deployment and collaboration, eliminating compatibility problems. I started learning Docker because I saw that it might be useful to me in the future. Docker made me understand and solve problems like \"It doesn't work on my machine!\"",
+        "experience": "4 months."
+      },
+      "git": {
+        "hover": "Git: Distributed version control system.",
+        "click": "Git is my main version control tool. It allows me to track code changes, collaborate efficiently as a team, and manage the development history of my projects, ensuring I can go back to any previous state of the code. Git is a tool that greatly facilitates teamwork and project control. It's undeniable that it's one of the mandatory tools for a programmer who cares about their career.",
+        "experience": "1 year and 5 months."
+      },
+      "github": {
+        "hover": "Github: Code hosting platform.",
+        "click": "I use GitHub as my central platform for code hosting and collaboration. It not only facilitates sharing my projects, but also allows me to contribute to the open-source community and organize my portfolio in a professional manner.",
+        "experience": "2 years."
+      },
+      "linux": {
+        "hover": "Linux: Open-source operating system.",
+        "click": "I used Linux for a short time but fell in love with it. Its flexibility, robust command line, and vast developer community provide me with a powerful, adaptable, fast, and lightweight working environment ideal for programming and managing servers. I learned basic terminal principles and some Linux distributions.",
+        "experience": "6 months."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "project1": {
+      "description": "Corinthians Website 'Copy' Project. Developed through studies and practice after completing a YouTube course! The project consists of recreating the website from scratch with simple ideas."
+    },
+    "project2": {
+      "description": "Chat-Bot Alura Immersion 2025 - Developed in Python during Alura's free immersion."
+    },
+    "project3": {
+      "description": "TO-DO List - Project carried out during an internship at the City Council, focusing on design and programming logic."
+    },
+    "project4": {
+      "description": "Jafetech - Bidding System - Bidding Management Platform."
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}
