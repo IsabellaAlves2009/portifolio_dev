@@ -1,4 +1,6 @@
-{/* Componente de Navbar */}
+{
+  /* Componente de Navbar */
+}
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,9 +22,12 @@ const NavWrapper = styled.nav<{ $isScrolled: boolean }>`
   justify-content: center; /* Crucial para centralizar quando a largura diminuir */
   z-index: 100;
   padding: 0 1rem;
-  transform: ${props => props.$isScrolled ? 'translateY(-100%)' : 'translateY(0)'};
-  opacity: ${props => props.$isScrolled ? 0 : 1};
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: ${(props) =>
+    props.$isScrolled ? "translateY(-100%)" : "translateY(0)"};
+  opacity: ${(props) => (props.$isScrolled ? 0 : 1)};
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 `;
 
 const DesktopContainer = styled(motion.div)<{ $isScrolled: boolean }>`
@@ -32,15 +37,21 @@ const DesktopContainer = styled(motion.div)<{ $isScrolled: boolean }>`
     align-items: center;
     justify-content: space-between;
     /* Transição de cores: mais escuro no scroll para legibilidade */
-    background: ${props => props.$isScrolled ? 'rgba(17, 1, 24, 0.85)' : 'rgba(170, 127, 194, 0.1)'};
+    background: ${(props) =>
+      props.$isScrolled ? "rgba(17, 1, 24, 0.85)" : "rgba(170, 127, 194, 0.1)"};
     backdrop-filter: blur(20px);
     border: 1px solid rgba(104, 9, 167, 0.3);
     border-radius: 9999px;
     color: white;
-    box-shadow: ${props => props.$isScrolled ? '0 10px 30px rgba(0, 0, 0, 0.5)' : '0 8px 32px rgba(0, 0, 0, 0.2)'};
+    box-shadow: ${(props) =>
+      props.$isScrolled
+        ? "0 10px 30px rgba(0, 0, 0, 0.5)"
+        : "0 8px 32px rgba(0, 0, 0, 0.2)"};
   }
 `;
-{/* Navbar mobile container*/}
+{
+  /* Navbar mobile container*/
+}
 const MobileContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,20 +67,22 @@ const MobileContainer = styled.div`
 `;
 
 const LogoSymbol = styled.div`
-  font-family: 'Fira Code', 'Courier New', monospace;
+  font-family: "Fira Code", "Courier New", monospace;
   font-size: 1.4rem;
   font-weight: 800;
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.1);
     text-shadow: 0 0 12px rgba(104, 9, 167, 0.6);
   }
 `;
 
-{/* Espaçamento de botões */}
+{
+  /* Espaçamento de botões */
+}
 const NavLinks = styled.div`
   display: flex;
   gap: 2.5rem;
@@ -90,7 +103,7 @@ const LinkItem = styled.a`
 
   /* Linha decorativa no hover */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -99,12 +112,14 @@ const LinkItem = styled.a`
     background: #6809a7;
     transition: width 0.3s;
   }
-  
+
   &:hover::after {
     width: 100%;
   }
 `;
-{/* Navbar menu = */}
+{
+  /* Navbar menu = */
+}
 const MobileMenu = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -144,16 +159,14 @@ export default function Navbar() {
         initial={false}
         animate={{
           // Encolhe e centraliza no scroll
-          width: scrolled ? "65%" : "100%", 
+          width: scrolled ? "65%" : "100%",
           maxWidth: scrolled ? "850px" : "1200px",
           padding: scrolled ? "0.6rem 2.5rem" : "1rem 3.5rem",
         }}
         transition={{ type: "spring", stiffness: 200, damping: 22 }}
       >
-        <LogoSymbol onClick={scrollToTop}>
-          {"</>"}
-        </LogoSymbol>
-        
+        <LogoSymbol onClick={scrollToTop}>{"</>"}</LogoSymbol>
+
         <NavLinks>
           {navItems.map((item) => (
             <LinkItem key={item.name} href={item.link}>
@@ -163,19 +176,25 @@ export default function Navbar() {
         </NavLinks>
 
         {/* Div vazia para manter o LogoSymbol e NavLinks equilibrados no espaço entre eles */}
-        <div style={{ width: '40px' }} /> 
+        <div style={{ width: "40px" }} />
       </DesktopContainer>
 
       {/* Mobile Version */}
       <MobileContainer>
-        <div style={{ display: 'flex', justifyContent: scrolled ? 'flex-end' : 'space-between', alignItems: 'center' }}>
-          {!scrolled && (
-            <LogoSymbol onClick={scrollToTop}>
-              {"</>"}
-            </LogoSymbol>
-          )}
-          <div onClick={() => setIsOpen(!isOpen)} style={{ cursor: 'pointer' }}>
-            {isOpen ? <X color="white" size={28} /> : <Menu color="white" size={28} />}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: scrolled ? "flex-end" : "space-between",
+            alignItems: "center",
+          }}
+        >
+          {!scrolled && <LogoSymbol onClick={scrollToTop}>{"</>"}</LogoSymbol>}
+          <div onClick={() => setIsOpen(!isOpen)} style={{ cursor: "pointer" }}>
+            {isOpen ? (
+              <X color="white" size={28} />
+            ) : (
+              <Menu color="white" size={28} />
+            )}
           </div>
         </div>
 
@@ -187,9 +206,9 @@ export default function Navbar() {
               exit={{ opacity: 0, height: 0 }}
             >
               {navItems.map((item) => (
-                <LinkItem 
-                  key={item.name} 
-                  href={item.link} 
+                <LinkItem
+                  key={item.name}
+                  href={item.link}
                   onClick={() => setIsOpen(false)}
                   style={{ fontSize: "1.1rem", padding: "0.5rem 0" }}
                 >
