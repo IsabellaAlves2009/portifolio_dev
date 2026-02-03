@@ -128,43 +128,49 @@ const Hero = () => {
                     sx={{
                       marginLeft: "-10px",
                       fontSize: {
-                        xs: "1.9rem",
-                        sm: "3rem",
-                        md: "3.0rem",
-                        lg: "4rem",
+                        xs: "1.4rem",
+                        sm: "2.2rem",
+                        md: "2.5rem",
+                        lg: "3.2rem",
                       },
                     }}
                   >
-                    I'm a&nbsp;
+                    Eu sou&nbsp;
                   </Box>
                   <Box
                     component="span"
                     sx={{
                       display: "inline-block",
                       minWidth: {
-                        xs: "300px",
-                        sm: "700px",
-                        md: "600px",
-                        lg: "500px",
+                        xs: "180px",
+                        sm: "400px",
+                        md: "500px",
+                        lg: "450px",
                       },
+                      maxWidth: "90vw",
                       textAlign: "left",
-                      fontSize: {
-                        xs: "1.9rem",
-                        sm: "3rem",
-                        md: "3.5rem",
-                        lg: "4rem",
+                      lineHeight: 1.2,
+                      verticalAlign: "bottom",
+                      "& span": {
+                        textShadow: "0 0 12px rgba(104, 9, 167, 0.6)",
+                        fontSize: {
+                          xs: "1.4rem",
+                          sm: "2.2rem",
+                          md: "2.5rem",
+                          lg: "3.2rem",
+                        },
                       },
                     }}
                   >
                     {/* Logica do typing text com arrays de frases */}
+
                     <TextType
-                      style={{ textShadow: "0 0 12px rgba(104, 9, 167, 0.6)" }}
                       textColors={["#6809a7ff"]}
                       as="span"
                       text={[
-                        "Future Software Engineer",
-                        "Full-Stack Developer",
-                        "Enthusiast of Technology",
+                        "um Eng. de Software em formação",
+                        "Desenvolvedor Full Stack",
+                        "um Entusiasta da Tecnologia",
                       ]}
                       typingSpeed={40}
                       deletingSpeed={30}
@@ -197,7 +203,7 @@ const Hero = () => {
                 <Grid>
                   <StyledButton onClick={handleDownloadCv}>
                     <DownloadIcon />
-                    <Typography>Download CV</Typography>
+                    <Typography>Baixar CV</Typography>
                   </StyledButton>
                 </Grid>
 
@@ -218,7 +224,7 @@ const Hero = () => {
                       }}
                     >
                       <MailOutlineIcon />
-                      <Typography>Contact me</Typography>
+                      <Typography>Contato</Typography>
                     </a>
                   </StyledButton>
                 </Grid>
