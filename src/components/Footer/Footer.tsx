@@ -6,6 +6,7 @@ import {
   FaDiscord,
 } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
+import { useTranslation } from "react-i18next";
 
 {
   /* Estilo do footer */
@@ -222,13 +223,14 @@ const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIP
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { label: "Início", href: "#" },
-    { label: "Sobre mim", href: "#about-me" },
-    { label: "Habilidades", href: "#skills" },
-    { label: "Experiência", href: "#experience" },
-    { label: "Projetos", href: "#projects" },
+    { label: t("footer.navLinks.home"), href: "#" },
+    { label: t("footer.navLinks.about"), href: "#about-me" },
+    { label: t("footer.navLinks.skills"), href: "#skills" },
+    { label: t("footer.navLinks.experience"), href: "#experience" },
+    { label: t("footer.navLinks.projects"), href: "#projects" },
   ];
 
   const socials = [
@@ -262,7 +264,7 @@ export default function Footer() {
           <Col1>
             <div>
               <Name>Jhon Herik Gomes de Castro</Name>
-              <Role>Desenvolvedor Full-Stack</Role>
+              <Role>{t("footer.role")}</Role>
             </div>
             <Socials>
               {socials.map((s) => (
@@ -281,7 +283,7 @@ export default function Footer() {
           </Col1>
 
           <Col2>
-            <NavHeading>Navegação</NavHeading>
+            <NavHeading>{t("footer.navigation")}</NavHeading>
             <Nav>
               {navLinks.map((l) => (
                 <NavLink key={l.label} href={l.href}>
@@ -292,7 +294,7 @@ export default function Footer() {
           </Col2>
 
           <Col3>
-            <StatusHeading>Status</StatusHeading>
+            <StatusHeading>{t("footer.status")}</StatusHeading>
             <StatusCard>
               <div
                 style={{
@@ -302,9 +304,7 @@ export default function Footer() {
                 }}
               >
                 <Dot />
-                <StatusText>
-                  Aberto para oportunidades e projetos freelances
-                </StatusText>
+                <StatusText>{t("footer.statusMessage")}</StatusText>
               </div>
               <p
                 style={{
@@ -314,17 +314,15 @@ export default function Footer() {
                   lineHeight: "1.5",
                 }}
               >
-                Tem algum projeto em mente? Vamos conversar!
+                {t("footer.statusQuestion")}
               </p>
             </StatusCard>
           </Col3>
         </Grid>
 
         <BottomBar>
-          <BottomText>
-            © {year} Jhon Herik Gomes de Castro. Todos os direitos reservados.
-          </BottomText>
-          <BottomText>Feito com Paciência e Código.</BottomText>
+          <BottomText>{t("footer.copyright", { year })}</BottomText>
+          <BottomText>{t("footer.madeWith")}</BottomText>
         </BottomBar>
       </Container>
     </StyledFooter>

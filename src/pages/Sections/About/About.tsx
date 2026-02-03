@@ -1,5 +1,6 @@
 import { styled, Typography } from "@mui/material";
 import { Fade, Slide } from "react-awesome-reveal";
+import { useTranslation } from "react-i18next";
 
 // --- Styled Components --- //
 
@@ -83,6 +84,7 @@ const StatCard = styled("div")(({ theme }) => ({
 // --- Main Component --- //
 
 const About = () => {
+  const { t } = useTranslation();
   {
     /* Secção Sobre*/
   }
@@ -96,7 +98,7 @@ const About = () => {
             gutterBottom
             marginBottom={6}
           >
-            Sobre mim
+            {t("about.title")}
           </Typography>
         </Slide>
       </Fade>
@@ -106,20 +108,14 @@ const About = () => {
         <Slide direction="left" triggerOnce>
           <StyledContainer>
             <Typography variant="body1" lineHeight={1.8}>
-              Minha jornada na programação começou com uma pergunta:{" "}
-              <strong>"Como isso funciona?"</strong>. Aos 13 anos, essa dúvida
-              me levou aos códigos de scripts de jogos. Comecei a me dedicar de
-              verdade aos 17 e, hoje, aos 19, essa mesma sede de aprendizado me
-              guia na criação de aplicações completas, do Front ao Back-end.
+              {t("about.bio")}
               <br />
               <br />
-              Nem só de console.log vive o homem: nas horas vagas, estou sempre
-              jogando, ouvindo música, lendo ou explorando novas tecnologias.
+              {t("about.hobbies")}
               <br />
               <br />
               <Typography component="i" variant="caption" color="gray">
-                "Sou só um vírus, querendo escapar, dos programadores da vida."
-                – Wesley D'Amico
+                {t("about.quote")}
               </Typography>
             </Typography>
           </StyledContainer>
@@ -131,19 +127,19 @@ const About = () => {
             {/* Cards */}
             <StatCard>
               <h2>10+</h2>
-              <p>Projetos</p>
+              <p>{t("about.stats.projects")}</p>
             </StatCard>
             <StatCard>
               <h2>2+</h2>
-              <p>Anos de experiência</p>
+              <p>{t("about.stats.experience")}</p>
             </StatCard>
             <StatCard>
               <h2>5k+</h2>
-              <p>Linhas de código</p>
+              <p>{t("about.stats.lines")}</p>
             </StatCard>
             <StatCard>
               <h2 style={{ fontSize: "2.5rem" }}>∞</h2>
-              <p>Café consumido</p>
+              <p>{t("about.stats.coffee")}</p>
             </StatCard>
           </StatsGrid>
         </Slide>

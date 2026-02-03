@@ -2,6 +2,7 @@
 import { Fade, Slide } from "react-awesome-reveal";
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import htmlIcon from "../../../assets/images/HTML.svg";
 import cssIcon from "../../../assets/images/CSS.svg";
 import bootsIcon from "../../../assets/images/Bootstrap.svg";
@@ -21,28 +22,26 @@ import nodejsIcon from "../../../assets/images/NodeJS-Dark.svg";
 interface Skill {
   id: string;
   image: string;
-  hoverText: string;
-  clickText: string;
-  expText: string;
+  translationKey: string;
 }
 
 // Skills icons
 const skillsData: Skill[] = [
-  { id : 'Html', image: htmlIcon, hoverText: 'HTML: Estrutura base de todas as páginas web.', clickText: 'O HTML foi a minha porta de entrada para o desenvolvimento front-end. Através dele, não só aprendi a estruturar páginas web, mas também a compreender conceitos essenciais como tags, protocolos de rede e a importância de uma base sólida para qualquer projeto.', expText: '2 anos e 5 meses.' },
-  { id: 'Css', image: cssIcon, hoverText: 'CSS: Estilização de componentes web.', clickText: 'Com CSS, aprendi a transformar o visual de um projeto. Sem ele seu site simplesmente não ganha vida nem tampouco cor, estilo, interações básicas de imagens e outras coisas visuais. Aprendi técnicas avançadas como FlexBox e responsavidade com o MediaQueries, essa linguagem me permite criar designs que são não apenas bonitos, mas também funcionais e adaptáveis a qualquer tela!', expText: '2 anos e 5 meses.'},
-  { id: 'Bootstrap', image: bootsIcon, hoverText: 'Bootstrap: Framework de CSS para desenvolvimento rápido.', clickText: 'Bootstrap foi a solução que encontrei para acelerar o desenvolvimento de projetos, garantindo designs responsivos de forma rápida e eficiente. Esse framework me permitiu focar na funcionalidade, sabendo que a parte visual já estaria bem estruturada, aprender a usar esse framework foi um grande passo durante meu aprendizado tornando assim mais fácil de saber a disponibilidade e usuabilidade de meu código.', expText:'1 ano e 2 meses.' },
-  { id: 'Tailwind', image: tailwindIcon, hoverText: 'Tailwind: Framework de CSS para desenvolvimento web com flexibilidades para design.', clickText: 'O Tailwind tem uma certa flexibilidade quando se trata de deixar o visual mais bonito, mais otimizado e uma semântica simples de entender. Embora deixando seu código mais verboso, tendo um certo conhecimento de CSS me ajudou a entender melhor e a estruturar minhas paginas com Tailwind.', expText:'1 mês.'},
-  { id: 'JavaScript', image: jsIcon, hoverText: 'JavaScript: Adiciona interatividade e dinamismo.', clickText: 'Comecei aprender o tão famoso JS pelo youtube, principios básicos e logo após me interessar tanto comprei um curso onde lá aprendi muita das coisas que aplico hoje. O JavaScript me abriu um mundo de possibilidades, permitindo que eu adicionasse lógica e interatividade às minhas aplicações. Com essa linguagem, explorei a manipulação do DOM, a criação de funcionalidades dinâmicas e a resolução de desafios de programação, tornando-se uma base essencial para a minha evolução.', expText: '2 anos.'},
-  { id: 'NodeJs', image: nodejsIcon, hoverText: 'Nodejs o motor V8 do JavaScript', clickText: 'O Nodejs pode executar o JavaScript fora da web, trabalhando ao lado do servidor (SSR). Ainda com pouco experiência, procuro aprender mais e mais sobre Nodejs. Com o Nodejs tenho mais escalabilidades de consumir APIs e manter meu projeto conectado com o backend / base de dados.', expText:'+- 1 mes.'},
-  { id: 'TypeScript', image: tsIcon, hoverText: 'TypeScript: Superconjunto de JS com tipagem estática.', clickText: 'O TypeScript é o JavaScript mais forte! Ele se tornou uma ferramenta indispensável para garantir a segurança e a escalabilidade dos meus projetos. Ao adicionar a tipagem estática, ele me ajuda a prever e corrigir erros, resultando em um código mais robusto, organizado e fácil de manter.', expText: '2 meses.'},
-  { id: 'ReactJs', image: reactIcon, hoverText: 'ReactJS: Biblioteca para construir interfaces de usuário.', clickText: 'ReactJS é uma biblioteca JavaScript. Com ReactJS, aprendi a construir interfaces de usuário modernas e eficientes. A abordagem baseada em componentes me permite desenvolver aplicações de página única (SPAs) de forma modular, reutilizável e com alto desempenho, facilitando a criação de experiências interativas e complexas.', expText: '2 meses.'},
-  { id: 'vite', image: viteIcon, hoverText: 'Vite: Ferramenta de build frontend.', clickText: 'Vite é a minha ferramenta de build de escolha para projetos front-end. Sua velocidade e otimização do ambiente de desenvolvimento me permitem ter um feedback instantâneo sobre as mudanças no código, tornando o processo de criação mais ágil e produtivo.', expText:'2 meses.' },
-  { id: 'python', image: pythonIcon, hoverText: 'Python: Linguagem de programação versátil e poderosa.', clickText: 'Python é uma linguagem extremamente versátil que utilizo para diversas tarefas, desde a automação de scripts até o desenvolvimento de aplicações web. Sua sintaxe clara e a vasta quantidade de bibliotecas me permitem resolver problemas de forma eficiente em diferentes contextos. Python é uma linguagem bastante presente nos estudos / trabalhos de CyberSegurança que também é uma área que tenho interesse!', expText: '9 meses.'},
-  { id: 'Flask', image: flaskIcon, hoverText: 'Flask: Microframework web em Python.', clickText: 'Flask é o microframework de Python que utilizo para criar aplicações web de forma rápida e descomplicada. Sua simplicidade me permite focar na lógica do negócio, sendo ideal para construir APIs e protótipos com um código limpo e minimalista.', expText: '3 meses.'},
-  { id: 'docker', image: dockerIcon, hoverText: 'Docker: Plataforma para empacotar aplicações.', clickText: 'Docker é uma ferramenta essencial para garantir a consistência dos meus projetos em diferentes ambientes. Com a sua tecnologia de contêineres, posso empacotar minhas aplicações com todas as suas dependências, facilitando a implantação e a colaboração, eliminando problemas de compatibilidade. Comecei a aprender Docker porque vi que talvez mais para frente iria me ser útil, com o Docker me fez entender e resolver problemas como "Na minha máquina não funciona!"', expText:'4 meses.' },
-  { id: 'Git', image: gitIcon, hoverText: 'Git: Sistema de controle de versão distribuído.', clickText: 'O Git é a minha principal ferramenta de controle de versão. Ele me permite rastrear mudanças no código, colaborar de forma eficiente em equipe e gerenciar o histórico de desenvolvimento dos meus projetos, garantindo que eu possa voltar a qualquer estado anterior do código. O Git é uma ferramenta que facilita muito o trabalho em equipe e o controle de projetos, é inegável que é uma das ferramentas obrigatórias para um programador que preze sua carreira.', expText:'1 ano e 5 meses.' },
-  { id: 'Github', image: githubIcon, hoverText: 'Github: Plataforma de hospedagem de código.', clickText: 'Utilizo o GitHub como a minha plataforma central para hospedagem e colaboração de código. Ele não só facilita o compartilhamento dos meus projetos, mas também me permite contribuir para a comunidade open-source e organizar meu portfólio de forma profissional.', expText: '2 anos.'},
-  { id: 'linux', image: LinuxIcon, hoverText: 'Linux: Sistema operacional de código aberto.', clickText: 'Utilizei o Linux por pouco tempo porém me apaixonei, A sua flexibilidade, linha de comando robusta e a vasta comunidade de desenvolvedores me proporcionam um ambiente de trabalho poderoso, adaptável, rápido e leve ideal para programar e gerenciar servidores, Aprendi principios básicos de terminal e algumas distribuições Linux.', expText:'6 meses.'}
+  { id: "Html", image: htmlIcon, translationKey: "html" },
+  { id: "Css", image: cssIcon, translationKey: "css" },
+  { id: "Bootstrap", image: bootsIcon, translationKey: "bootstrap" },
+  { id: "Tailwind", image: tailwindIcon, translationKey: "tailwind" },
+  { id: "JavaScript", image: jsIcon, translationKey: "javascript" },
+  { id: "NodeJs", image: nodejsIcon, translationKey: "nodejs" },
+  { id: "TypeScript", image: tsIcon, translationKey: "typescript" },
+  { id: "ReactJs", image: reactIcon, translationKey: "react" },
+  { id: "vite", image: viteIcon, translationKey: "vite" },
+  { id: "python", image: pythonIcon, translationKey: "python" },
+  { id: "Flask", image: flaskIcon, translationKey: "flask" },
+  { id: "docker", image: dockerIcon, translationKey: "docker" },
+  { id: "Git", image: gitIcon, translationKey: "git" },
+  { id: "Github", image: githubIcon, translationKey: "github" },
+  { id: "linux", image: LinuxIcon, translationKey: "linux" },
 ];
 
 const loopSkillsData = [...skillsData, ...skillsData];
@@ -190,9 +189,11 @@ const TextContainer = styled.div`
 // Logicas
 
 const SkillsSection: React.FC = () => {
-  const [displayText, setDisplayText] = useState<string>(
-    "Passe o mouse ou clique em uma das habilidades para saber mais!",
-  );
+  const { t } = useTranslation();
+  const defaultText =
+    t("skills.defaultText") ||
+    "Passe o mouse ou clique em uma das habilidades para saber mais!";
+  const [displayText, setDisplayText] = useState<string>(defaultText);
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [displayExp, setDisplayExp] = useState<string>("");
 
@@ -247,25 +248,30 @@ const SkillsSection: React.FC = () => {
     };
   }, []);
 
-  const handleMouseEnter = (text: string, exp: string) => {
+  const handleMouseEnter = (skill: Skill) => {
     if (!isClicked) {
-      setDisplayExp(exp || "Tempo não informado.");
-      setDisplayText(text);
+      const hoverText = t(`skills.items.${skill.translationKey}.hover`);
+      const expText = t(`skills.items.${skill.translationKey}.experience`);
+      setDisplayExp(expText || "Tempo não informado.");
+      setDisplayText(hoverText);
     }
   };
 
   const handleMouseLeave = () => {
     if (!isClicked) {
       setDisplayText(
-        "Passe o mouse ou clique em uma das habilidades para saber mais!",
+        t("skills.defaultText") ||
+          "Passe o mouse ou clique em uma das habilidades para saber mais!",
       );
       setDisplayExp("");
     }
   };
 
-  const handleClick = (text: string, exp: string) => {
-    setDisplayText(text);
-    setDisplayExp(exp || "Tempo não informado.");
+  const handleClick = (skill: Skill) => {
+    const clickText = t(`skills.items.${skill.translationKey}.click`);
+    const expText = t(`skills.items.${skill.translationKey}.experience`);
+    setDisplayText(clickText);
+    setDisplayExp(expText || "Tempo não informado.");
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
@@ -276,21 +282,21 @@ const SkillsSection: React.FC = () => {
     <SkillsSectionWrapper>
       <Fade delay={400}>
         <Slide direction="up">
-          <StyledH1 id="skills">Linguagens & Ferramentas</StyledH1>
+          <StyledH1 id="skills">{t("skills.title")}</StyledH1>
         </Slide>
 
-        <ExperienceContainer>Experiência: {displayExp}</ExperienceContainer>
+        <ExperienceContainer>
+          {t("skills.experience")}: {displayExp}
+        </ExperienceContainer>
 
         <SkillsContainer>
           <VerticalCarouselContainer ref={carouselRef}>
             {loopSkillsData.map((skill, index) => (
               <ImageWrapper
                 key={`${skill.id}-${index}`}
-                onMouseEnter={() =>
-                  handleMouseEnter(skill.hoverText, skill.expText)
-                }
+                onMouseEnter={() => handleMouseEnter(skill)}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick(skill.clickText, skill.expText)}
+                onClick={() => handleClick(skill)}
               >
                 <img src={skill.image} alt={skill.id} />
               </ImageWrapper>

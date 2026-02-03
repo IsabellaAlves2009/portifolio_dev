@@ -8,6 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { FaGraduationCap, FaLaptopCode } from "react-icons/fa";
 import FlightLandIcon from "@mui/icons-material/FlightLand";
 import { Fade } from "react-awesome-reveal";
+import { useTranslation } from "react-i18next";
 
 const StyledBody = styled("section")(({ theme }) => ({
   background: theme.palette.gradient.dark,
@@ -17,6 +18,7 @@ const StyledBody = styled("section")(({ theme }) => ({
 }));
 
 const Timeline: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <StyledBody>
       <Fade delay={400}>
@@ -28,8 +30,7 @@ const Timeline: React.FC = () => {
           marginBottom="60px"
           id="experience"
         >
-          {" "}
-          Experiência
+          {t("timeline.title")}
         </Typography>
       </Fade>
       <div className="bg-black min-h-screen text-white p-10">
@@ -44,7 +45,7 @@ const Timeline: React.FC = () => {
                 borderRadius: "1rem",
               }}
               contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
-              date="2023"
+              date={t("timeline.events.arrival.date")}
               iconStyle={{
                 background: "linear-gradient(to bottom, #2F0743, #41295a)",
                 color: "#fff",
@@ -52,14 +53,13 @@ const Timeline: React.FC = () => {
               icon={<FlightLandIcon />}
             >
               <Fade delay={200} duration={3000} fraction={0.5}>
-                <h3 className="text-lg font-bold">Chegada à Portugal</h3>
+                <h3 className="text-lg font-bold">
+                  {t("timeline.events.arrival.title")}
+                </h3>
                 <h4 className="text-sm text-green-400">
-                  Adaptações, fuso horário, dificuldades
+                  {t("timeline.events.arrival.subtitle")}
                 </h4>
-                <p>
-                  "O início de tudo pode parecer obscuro, mas é justamente no
-                  caos inicial que nasce a ordem." – Friedrich Nietzsche
-                </p>
+                <p>{t("timeline.events.arrival.description")}</p>
               </Fade>
             </VerticalTimelineElement>
 
@@ -72,7 +72,7 @@ const Timeline: React.FC = () => {
                 borderRadius: "1rem",
               }}
               contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
-              date="2023-2024"
+              date={t("timeline.events.firstYear.date")}
               iconStyle={{
                 background: "linear-gradient(to bottom, #2F0743, #41295a)",
                 color: "#fff",
@@ -80,15 +80,13 @@ const Timeline: React.FC = () => {
               icon={<FaLaptopCode />}
             >
               <Fade delay={200} duration={3000} fraction={0.5}>
-                <h3 className="text-lg font-bold">1 Ano na Escola</h3>
+                <h3 className="text-lg font-bold">
+                  {t("timeline.events.firstYear.title")}
+                </h3>
                 <h4 className="text-sm text-green-400">
-                  Matriculado no Agrup. de Escolas Afonso de Albuquerque (LICEU)
+                  {t("timeline.events.firstYear.subtitle")}
                 </h4>
-                <p>
-                  Optei pelo curso de Tecnico de Informática e Gestão (TIG) Onde
-                  finalmente tive minha primeira Introdução a Programação com a
-                  linguagem C++
-                </p>
+                <p>{t("timeline.events.firstYear.description")}</p>
               </Fade>
             </VerticalTimelineElement>
 
@@ -101,7 +99,7 @@ const Timeline: React.FC = () => {
                 borderRadius: "1rem",
               }}
               contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
-              date="2024-2025"
+              date={t("timeline.events.secondYear.date")}
               iconStyle={{
                 background: "linear-gradient(to bottom, #2F0743, #41295a)",
                 color: "#fff",
@@ -109,13 +107,11 @@ const Timeline: React.FC = () => {
               icon={<FaLaptopCode />}
             >
               <Fade delay={200} duration={3000} fraction={0.5}>
-                <h3 className="text-lg font-bold">2 Ano na Escola</h3>
-                <h4>Inicio à estudos de forma autônoma</h4>
-                <p>
-                  Investi em cursos de programação me aprofundando mais sobre
-                  conteudos da área de programação. Comecei meus primeiros
-                  projetos.
-                </p>
+                <h3 className="text-lg font-bold">
+                  {t("timeline.events.secondYear.title")}
+                </h3>
+                <h4>{t("timeline.events.secondYear.subtitle")}</h4>
+                <p>{t("timeline.events.secondYear.description")}</p>
               </Fade>
             </VerticalTimelineElement>
 
@@ -127,7 +123,7 @@ const Timeline: React.FC = () => {
                 borderRadius: "1rem",
               }}
               contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
-              date="2025"
+              date={t("timeline.events.summer.date")}
               iconStyle={{
                 background: "linear-gradient(to bottom, #2F0743, #41295a)",
                 color: "#fff",
@@ -135,15 +131,11 @@ const Timeline: React.FC = () => {
               icon={<FaLaptopCode />}
             >
               <Fade delay={200} duration={3000} fraction={0.5}>
-                <h3 className="text-lg font-bold">Ferias de Verão</h3>
-                <h4>
-                  Aproveitei o máximo das férias de verão para poder estudar
-                  mais.
-                </h4>
-                <p>
-                  Introdução a LLM'S (Inteligencia Artificial), Docker, React,
-                  TypeScript, Python, API's
-                </p>
+                <h3 className="text-lg font-bold">
+                  {t("timeline.events.summer.title")}
+                </h3>
+                <h4>{t("timeline.events.summer.subtitle")}</h4>
+                <p>{t("timeline.events.summer.description")}</p>
               </Fade>
             </VerticalTimelineElement>
             {/* Formação FINALMENTE */}
@@ -155,7 +147,7 @@ const Timeline: React.FC = () => {
                 borderRadius: "1rem",
               }}
               contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
-              date="2025/2026"
+              date={t("timeline.events.graduation.date")}
               iconStyle={{
                 background: "linear-gradient(to bottom, #2F0743, #41295a)",
                 color: "#fff",
@@ -163,12 +155,11 @@ const Timeline: React.FC = () => {
               icon={<FaGraduationCap />}
             >
               <Fade delay={200} duration={3000} fraction={0.5}>
-                <h3 className="text-lg font-bold">Formação do Curso</h3>
-                <h4>Agrup. de Escolas Afonso de Albuquerque (LICEU)</h4>
-                <p>
-                  Ensino médio completo, hoje sigo focado na área tech buscando
-                  sempre aprender com meus próprios erros como desenvolvedor.
-                </p>
+                <h3 className="text-lg font-bold">
+                  {t("timeline.events.graduation.title")}
+                </h3>
+                <h4>{t("timeline.events.graduation.subtitle")}</h4>
+                <p>{t("timeline.events.graduation.description")}</p>
               </Fade>
             </VerticalTimelineElement>
           </VerticalTimeline>

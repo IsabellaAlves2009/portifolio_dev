@@ -7,6 +7,7 @@ import aluraChat from "../../../assets/images/alura-chat_project.png";
 import toDoList from "../../../assets/images/ToDo_list_project.png";
 import Jafetech from "../../../assets/images/jafetech_proj.png";
 import TiltedCard from "../../../components/TiltedCard/TiltedCard";
+import { useTranslation } from "react-i18next";
 
 type ProjectRowProps = {
   imageSrc?: string;
@@ -178,6 +179,9 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
 };
 
 export default function Projects() {
+  const { t } = useTranslation();
+  {
+  }
   const pageStyle: React.CSSProperties = {
     minHeight: "130em",
     height: "auto",
@@ -209,7 +213,7 @@ export default function Projects() {
     <main style={pageStyle}>
       <Fade delay={400}>
         <div style={titleStyle} id="projects">
-          Projetos
+          {t("projects.title")}
         </div>
       </Fade>
       {/* Projeto 1 */}
@@ -217,7 +221,7 @@ export default function Projects() {
         <ProjectRow
           imageFirst
           imageSrc={siteCorinthians}
-          description="Projeto de 'Cópia' do Site do Corinthians. Desenvolvido atráves de estudos e prática após termino de um curso do Youtube! O projeto consiste em recriar o site do zero porém com suas ideias de forma simples."
+          description={t("projects.project1.description")}
           githubUrl="https://github.com/jhonherikgc"
           liveUrl="https://github.com/jhonherikgc/site-corinthians"
         />
@@ -227,7 +231,7 @@ export default function Projects() {
         <ProjectRow
           imageFirst={false}
           imageSrc={aluraChat}
-          description="Chat-Bot Imersão Alura 2025 - Desenvolvido em Python durante imersão gratuita da Alura."
+          description={t("projects.project2.description")}
           githubUrl="https://github.com/jhonherikgc"
           liveUrl="https://github.com/jhonherikgc/Chat-bot-alura"
         />
@@ -237,7 +241,7 @@ export default function Projects() {
         <ProjectRow
           imageFirst
           imageSrc={toDoList}
-          description="TO-DO List - Projeto realizado durante estágio na Câmara Municipal, focando em design e lógica de programação."
+          description={t("projects.project3.description")}
           githubUrl="https://github.com/jhonherikgc"
           liveUrl="https://github.com/jhonherikgc/TO-DO-LIST"
         />
@@ -247,7 +251,7 @@ export default function Projects() {
         <ProjectRow
           imageFirst={false}
           imageSrc={Jafetech}
-          description="Jafetech - Sistema de Licitação - Plataforma de Gestão de Licitações."
+          description={t("projects.project4.description")}
           githubUrl="https://github.com/jhonherikgc"
           liveUrl="https://github.com/jhonherikgc/JAFETECH"
         />

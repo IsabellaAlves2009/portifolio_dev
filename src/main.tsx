@@ -4,6 +4,8 @@ import App from "./App.tsx";
 import { CssBaseline } from "@mui/material";
 import theme from "./styles/theme.ts";
 import { ThemeProvider } from "@emotion/react";
+import "./i18n.ts";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>

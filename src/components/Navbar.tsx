@@ -1,10 +1,11 @@
 {
   /* Componente de Navbar */
 }
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // --- Interfaces ---
 interface NavItem {
@@ -81,6 +82,35 @@ const LogoSymbol = styled.div`
 `;
 
 {
+  /* Botão de troca de idioma */
+}
+const LanguageButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(104, 9, 167, 0.3);
+  border: 1px solid rgba(104, 9, 167, 0.5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(104, 9, 167, 0.5);
+    border-color: rgba(104, 9, 167, 0.8);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+`;
+
+{
   /* Espaçamento de botões */
 }
 const NavLinks = styled.div`
@@ -133,13 +163,20 @@ const MobileMenu = styled(motion.div)`
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { i18n, t } = useTranslation();
 
   const navItems: NavItem[] = [
-    { name: "Sobre mim", link: "#about-me" },
-    { name: "Experiência", link: "#experience" },
-    { name: "Habilidades", link: "#skills" },
-    { name: "Projetos", link: "#projects" },
+    { name: t("navbar.about"), link: "#about-me" },
+    { name: t("navbar.skills"), link: "#skills" },
+    { name: t("navbar.experience"), link: "#experience" },
+    { name: t("navbar.projects"), link: "#projects" },
   ];
+
+  const handleLanguageChange = () => {
+    const newLang = i18n.language === "pt-BR" ? "en-US" : "pt-BR";
+    i18n.changeLanguage(newLang);
+    localStorage.setItem("language", newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -173,6 +210,10 @@ export default function Navbar() {
               {item.name}
             </LinkItem>
           ))}
+          <LanguageButton onClick={handleLanguageChange}>
+            <Globe size={18} />
+            {i18n.language === "pt-BR" ? "EN" : "PT"}
+          </LanguageButton>
         </NavLinks>
 
         {/* Div vazia para manter o LogoSymbol e NavLinks equilibrados no espaço entre eles */}
@@ -215,6 +256,13 @@ export default function Navbar() {
                   {item.name}
                 </LinkItem>
               ))}
+              <LanguageButton
+                onClick={handleLanguageChange}
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                <Globe size={18} />
+                {i18n.language === "pt-BR" ? "EN" : "PT"}
+              </LanguageButton>
             </MobileMenu>
           )}
         </AnimatePresence>

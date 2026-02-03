@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import cvFile from "../../../assets/images/jhon_castro.pdf";
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 
@@ -50,7 +51,28 @@ const StyledImg = styled("img")(({ theme }) => ({
 
 // Main Component
 const Hero = () => {
+  const { t } = useTranslation();
+
+  // Texto prefixo ("Eu sou" / "I am") vindo das traduções
+  const prefixText = t("hero.prefix");
+
+  // Roles — garante que recebemos um array do i18n
+  const roles = Array.isArray(t("hero.roles", { returnObjects: true }))
+    ? (t("hero.roles", { returnObjects: true }) as string[])
+    : [
+        "um Eng. de Software em formação",
+        "um Desenvolvedor Full Stack",
+        "um Entusiasta da Tecnologia",
+      ];
+
+  // Opções editáveis de typing
+  const typingSpeed = 40;
+  const deletingSpeed = 30;
+  const textColors = ["#6809a7ff"];
+
   // LÓGICA DE EMAIL
+  const EMAIL_SUBJECT = t("hero.contact");
+  const EMAIL_BODY = "Olá, como podemos criar juntos?";
   const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
   const handleDownloadCv = useCallback(() => {
@@ -114,7 +136,7 @@ const Hero = () => {
                   }}
                   mb={{ md: -2 }}
                 >
-                  Jhon Herik Gomes de Castro
+                  {t("hero.greeting")}
                 </Typography>
               </Fade>
               <Fade delay={500}>
@@ -135,7 +157,7 @@ const Hero = () => {
                       },
                     }}
                   >
-                    Eu sou&nbsp;
+                    {prefixText}&nbsp;
                   </Box>
                   <Box
                     component="span"
@@ -163,17 +185,12 @@ const Hero = () => {
                     }}
                   >
                     {/* Logica do typing text com arrays de frases */}
-
                     <TextType
-                      textColors={["#6809a7ff"]}
+                      textColors={textColors}
                       as="span"
-                      text={[
-                        "um Eng. de Software em formação",
-                        "um Desenvolvedor Full Stack",
-                        "um Entusiasta da Tecnologia",
-                      ]}
-                      typingSpeed={40}
-                      deletingSpeed={30}
+                      text={roles}
+                      typingSpeed={typingSpeed}
+                      deletingSpeed={deletingSpeed}
                     />
                   </Box>
                 </Typography>
@@ -203,7 +220,7 @@ const Hero = () => {
                 <Grid>
                   <StyledButton onClick={handleDownloadCv}>
                     <DownloadIcon />
-                    <Typography>Baixar CV</Typography>
+                    <Typography>{t("hero.downloadCV")}</Typography>
                   </StyledButton>
                 </Grid>
 
@@ -224,7 +241,7 @@ const Hero = () => {
                       }}
                     >
                       <MailOutlineIcon />
-                      <Typography>Contato</Typography>
+                      <Typography>{t("hero.contact")}</Typography>
                     </a>
                   </StyledButton>
                 </Grid>
@@ -246,7 +263,7 @@ const Hero = () => {
                       }}
                     >
                       <LinkedInIcon />
-                      <Typography>Linkedin</Typography>
+                      <Typography>{t("hero.linkedin")}</Typography>
                     </a>
                   </StyledButton>
                 </Grid>
@@ -268,7 +285,7 @@ const Hero = () => {
                       }}
                     >
                       <GitHubIcon />
-                      <Typography>Github</Typography>
+                      <Typography>{t("hero.github")}</Typography>
                     </a>
                   </StyledButton>
                 </Grid>
