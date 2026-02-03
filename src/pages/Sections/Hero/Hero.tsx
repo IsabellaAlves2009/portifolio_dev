@@ -169,7 +169,7 @@ const Hero = () => {
                       as="span"
                       text={[
                         "um Eng. de Software em formação",
-                        "Desenvolvedor Full Stack",
+                        "um Desenvolvedor Full Stack",
                         "um Entusiasta da Tecnologia",
                       ]}
                       typingSpeed={40}
