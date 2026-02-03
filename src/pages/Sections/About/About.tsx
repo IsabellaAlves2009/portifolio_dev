@@ -4,7 +4,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 // --- Styled Components --- //
 
 const StyledAbout = styled("section")(({ theme }) => ({
-  background: theme.palette.gradient?.dark || "#0d0d0d", 
+  background: theme.palette.gradient?.dark || "#0d0d0d",
   minHeight: "100vh",
   display: "flex",
   flexDirection: "column",
@@ -83,13 +83,20 @@ const StatCard = styled("div")(({ theme }) => ({
 // --- Main Component --- //
 
 const About = () => {
-  {/* Secção Sobre*/}
+  {
+    /* Secção Sobre*/
+  }
   return (
     <StyledAbout id="about-me">
       <Fade delay={400} triggerOnce>
         <Slide direction="up" triggerOnce>
-          <Typography variant="h3" textAlign="left" gutterBottom marginBottom={6}>
-            About me
+          <Typography
+            variant="h3"
+            textAlign="left"
+            gutterBottom
+            marginBottom={6}
+          >
+            Sobre mim
           </Typography>
         </Slide>
       </Fade>
@@ -99,19 +106,20 @@ const About = () => {
         <Slide direction="left" triggerOnce>
           <StyledContainer>
             <Typography variant="body1" lineHeight={1.8}>
-                Olá, me chamo <strong>Jhon Herik</strong>, tenho 19 anos. Minha jornada na
-                programação teve início aos 13 anos, quando a curiosidade de
-                saber o que vi em código de um "Hack / Script" de Minecraft
-                despertou em mim o interesse de entender o que aquilo fazia. 
-              <br /><br />
-               	Hoje estou trabalhando para ser um desenvolvedor <strong>Full-Stack</strong>,
-                aplico dedicação para criar projetos robustos e funcionais, do
-                front ao back-end. Meu objetivo é continuar evoluindo e
-                contribuir para o mundo digital com projetos inovadores e de
-                alta qualidade.
-              <br /><br />
+              Minha jornada na programação começou com uma pergunta:{" "}
+              <strong>"Como isso funciona?"</strong>. Aos 13 anos, essa dúvida
+              me levou aos códigos de scripts de jogos. Comecei a me dedicar de
+              verdade aos 17 e, hoje, aos 19, essa mesma sede de aprendizado me
+              guia na criação de aplicações completas, do Front ao Back-end.
+              <br />
+              <br />
+              Nem só de console.log vive o homem: nas horas vagas, estou sempre
+              jogando, ouvindo música, lendo ou explorando novas tecnologias.
+              <br />
+              <br />
               <Typography component="i" variant="caption" color="gray">
-                "Sou só um vírus, querendo escapar, dos programadores da vida." – Wesley D'Amico
+                "Sou só um vírus, querendo escapar, dos programadores da vida."
+                – Wesley D'Amico
               </Typography>
             </Typography>
           </StyledContainer>
