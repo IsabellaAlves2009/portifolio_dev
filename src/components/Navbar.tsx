@@ -212,7 +212,7 @@ export default function Navbar() {
           ))}
           <LanguageButton onClick={handleLanguageChange}>
             <Globe size={18} />
-            {i18n.language === "pt-BR" ? "EN" : "PT"}
+            {i18n.language === "pt-BR" ? "PT" : "EN"}
           </LanguageButton>
         </NavLinks>
 
@@ -261,7 +261,7 @@ export default function Navbar() {
                 style={{ width: "100%", justifyContent: "center" }}
               >
                 <Globe size={18} />
-                {i18n.language === "pt-BR" ? "EN" : "PT"}
+                {i18n.language === "pt-BR" ? "PT" : "EN"}
               </LanguageButton>
             </MobileMenu>
           )}
