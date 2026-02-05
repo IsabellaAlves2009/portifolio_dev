@@ -10,7 +10,6 @@ lerna-debug.log*
 # Dependências e Pacotes
 # A pasta node_modules contém todas as bibliotecas baixadas. Ela é recriada com 'npm install'.
 /node_modules
-/package-lock.json
 
 # Arquivos de Build e Produção
 # A pasta 'dist' é gerada automaticamente quando você compila o projeto.
