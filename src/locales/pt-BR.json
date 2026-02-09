@@ -119,6 +119,18 @@
     },
     "project4": {
       "description": "Jafetech - Sistema de Licitação - Plataforma de Gestão de Licitações."
+    },
+    "project5": {
+      "description": "Login Page - Projeto de página de login, focando em design e usabilidade."
+    },
+    "project6": {
+      "description": "Johnny Barbershop - Projeto de site para barbearia, com foco em design e experiência do usuário."
+    },
+    "project7": {
+      "description": "ERP - Sistema de Planejamento de Recursos Empresariais, desenvolvido para otimizar processos internos e gestão de recursos."
+    },
+    "project8": {
+      "description": "HoneePay - Sistema de Pagamento Online, projetado para facilitar transações financeiras de forma segura e eficiente."
     }
   },
   "timeline": {

@@ -119,6 +119,18 @@
     },
     "project4": {
       "description": "Jafetech - Sistema de Licitação - Plataforma de Gestão de Licitações."
+    },
+    "project5": {
+      "description": "Login Page - Projeto de página de login, focado em design e responsividade, utilizando ReactJS e Tailwind CSS."
+    },
+    "project6": {
+      "description": "Johnny Barbershop - Projeto de site para barbearia, com foco em design e responsividade, marcações + cadastros utilizando EJS, Nodejs e MongoDB."
+    },
+    "project7": {
+      "description": "ERP - Projeto de sistema de gestão empresarial, com foco em funcionalidades e integração, utilizando NodeJS e ReactJS."
+    },
+    "project8": {
+      "description": "HoneePay - Projeto de sistema de pagamento, com foco em segurança e usabilidade. Desenvolvido em equipe, utilizando EJS, NodeJS e MongoDB."
     }
   },
   "navbar": {

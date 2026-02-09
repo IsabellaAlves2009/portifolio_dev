@@ -119,6 +119,18 @@
     },
     "project4": {
       "description": "Jafetech - Bidding System - Bidding Management Platform."
+    },
+    "project5": {
+      "description": "Login Page - Login page project, focusing on design and usability."
+    },
+    "project6": {
+      "description": "Johnny Barbershop - Barber Shop Management System, with a focus on design and user experience."
+    },
+    "project7": {
+      "description": "ERP - Enterprise Resource Planning System. Developed to optimize internal processes and resource management."
+    },
+    "project8": {
+      "description": "HoneePay - Payment System for E-commerce. Designed to facilitate financial transactions in a secure and efficient manner."
     }
   },
   "timeline": {
