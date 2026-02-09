@@ -189,7 +189,7 @@
     "status": "Status",
     "statusMessage": "Open to opportunities and freelance projects",
     "statusQuestion": "Have a project in mind? Let's talk!",
-    "copyright": "© {year} Jhon Herik Gomes de Castro. All rights reserved.",
+    "copyright": "© {{year}} Jhon Herik Gomes de Castro. All rights reserved.",
     "madeWith": "Made with Patience and Code."
   }
 }
