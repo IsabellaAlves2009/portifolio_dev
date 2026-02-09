@@ -222,7 +222,6 @@ const EMAIL_BODY = "Olá, como podemos criar juntos?";
 const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   const { t } = useTranslation();
 
   const navLinks = [
@@ -321,7 +320,7 @@ export default function Footer() {
         </Grid>
 
         <BottomBar>
-          <BottomText>{t("footer.copyright", { year })}</BottomText>
+          <BottomText>{t("footer.copyright", { year: 2026 })}</BottomText>
           <BottomText>{t("footer.madeWith")}</BottomText>
         </BottomBar>
       </Container>
