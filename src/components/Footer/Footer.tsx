@@ -223,6 +223,7 @@ const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIP
 
 export default function Footer() {
   const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
   const navLinks = [
     { label: t("footer.navLinks.home"), href: "#" },
@@ -320,7 +321,9 @@ export default function Footer() {
         </Grid>
 
         <BottomBar>
-          <BottomText>{t("footer.copyright", { year: 2026 })}</BottomText>
+          <BottomText>
+            {t("footer.copyright", { year: currentYear })}
+          </BottomText>
           <BottomText>{t("footer.madeWith")}</BottomText>
         </BottomBar>
       </Container>
