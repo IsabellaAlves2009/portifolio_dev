@@ -7,6 +7,10 @@ import aluraChat from "../../../assets/images/alura-chat_project.png";
 import toDoList from "../../../assets/images/ToDo_list_project.png";
 import Jafetech from "../../../assets/images/jafetech_proj.png";
 import TiltedCard from "../../../components/TiltedCard/TiltedCard";
+import ERP from "../../../assets/images/ERP.png";
+import honeepay from "../../../assets/images/honeepay.png";
+import JohnnyBarbershop from "../../../assets/images/JohnnyBarbershop.png";
+import loginPage from "../../../assets/images/LoginPage.png";
 import { useTranslation } from "react-i18next";
 
 type ProjectRowProps = {
@@ -257,9 +261,45 @@ export default function Projects() {
         />
       </Slide>
       {/* Projeto 5 */}
+      <Slide direction="right" delay={400}>
+        <ProjectRow
+          imageFirst={false}
+          imageSrc={loginPage}
+          description={t("projects.project5.description")}
+          githubUrl="https://github.com/jhonherikgc"
+          liveUrl="https://github.com/jhonherikgc/Login-Page"
+        />
+      </Slide>
       {/* Projeto 6 */}
+      <Slide direction="left" delay={400}>
+        <ProjectRow
+          imageFirst={false}
+          imageSrc={JohnnyBarbershop}
+          description={t("projects.project6.description")}
+          githubUrl="https://github.com/jhonherikgc"
+          liveUrl="https://github.com/jhonherikgc/Johnny-Barber-Shop"
+        />
+      </Slide>
       {/* Projeto 7 */}
-
+      <Slide direction="right" delay={400}>
+        <ProjectRow
+          imageFirst={false}
+          imageSrc={ERP}
+          description={t("projects.project7.description")}
+          githubUrl="https://github.com/jhonherikgc"
+          liveUrl="https://github.com/Vexwe/ERP"
+        />
+      </Slide>
+      {/* Projeto 8 */}
+      <Slide direction="left" delay={400}>
+        <ProjectRow
+          imageFirst={false}
+          imageSrc={honeepay}
+          description={t("projects.project8.description")}
+          githubUrl="https://github.com/jhonherikgc"
+          liveUrl="https://github.com/esc-software/HoneePay"
+        />
+      </Slide>
       {/* Espaçador para afastar o footer no mobile */}
       <div style={{ height: "80px", flexShrink: 0 }} />
     </main>
