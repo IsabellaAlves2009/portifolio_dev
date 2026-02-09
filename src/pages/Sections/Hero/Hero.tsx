@@ -150,7 +150,7 @@ const Hero = () => {
                     sx={{
                       marginLeft: "-10px",
                       fontSize: {
-                        xs: "1.4rem",
+                        xs: "1.2rem",
                         sm: "2.2rem",
                         md: "2.5rem",
                         lg: "3.2rem",
@@ -176,7 +176,7 @@ const Hero = () => {
                       "& span": {
                         textShadow: "0 0 12px rgba(104, 9, 167, 0.6)",
                         fontSize: {
-                          xs: "1.4rem",
+                          xs: "1.2rem",
                           sm: "2.2rem",
                           md: "2.5rem",
                           lg: "3.2rem",
