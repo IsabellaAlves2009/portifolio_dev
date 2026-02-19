@@ -46,12 +46,12 @@ const skills: Skill[] = [
 
 const loopSkills = [...skills, ...skills];
 
+/* ================= STYLES ================= */
 
 const Section = styled.section`
   width: 100%;
   background: linear-gradient(to right, #000, #2f0743);
   padding: clamp(4rem, 8vw, 7rem) 0;
-  overflow-x: visible;
 `;
 
 const Wrapper = styled.div`
@@ -64,96 +64,80 @@ const Title = styled.h2`
   color: #fff;
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 `;
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 120px 1fr;
+  gap: 3rem;
+  align-items: center;
 `;
 
 const Carousel = styled.div`
+  width: 120px;
+  height: 380px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  height: 420px;
-  overflow-y: auto;
-  scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    height: auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+  overflow: hidden;
 `;
 
 const SkillButton = styled.button`
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  background: #0b0b0b;
-  border: none;
+  width: 56px;
+  height: 56px;
+
+  @media (min-width: 640px) {
+    width: 64px;
+    height: 64px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 88px;
+    height: 88px;
+  }
+
+  border-radius: 15px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 
   &:hover {
     transform: scale(1.15);
+    border-color: #a855f7;
   }
 
   img {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
-  }
-
-  /* MOBILE */
-  @media (max-width: 768px) {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
   }
 `;
 
 const TextBox = styled.div`
-  background: rgba(15, 23, 42, 0.45);
-  border-radius: 18px;
-  padding: 2rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid #a855f7;
   color: #fff;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  min-height: 180px;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 1.4rem;
-    min-height: 140px;
-  }
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 520px;
 `;
 
 const Experience = styled.p`
+  margin-top: 0.75rem;
   color: #cbd5f5;
-  font-size: 1rem;
-  margin-top: 1rem;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
+  font-size: 0.95rem;
+  opacity: 0.9;
 `;
 
+/* ================= COMPONENT ================= */
 
 const SkillsSection: React.FC = () => {
   const { t } = useTranslation();
@@ -169,32 +153,30 @@ const SkillsSection: React.FC = () => {
     const el = carouselRef.current;
     if (!el) return;
 
-    const speed = 0.5;
-    let frame: number;
+    let animationId: number;
+    const speed = 0.6;
+    let isHovering = false;
 
     const animate = () => {
-      const mobile = window.innerWidth <= 768;
-
-      if (mobile) {
-        el.scrollLeft += speed;
-        if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0;
-      } else {
+      if (!isHovering) {
         el.scrollTop += speed;
-        if (el.scrollTop >= el.scrollHeight / 2) el.scrollTop = 0;
+        if (el.scrollTop >= el.scrollHeight / 2) {
+          el.scrollTop = 0;
+        }
       }
-
-      frame = requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
+    el.addEventListener("mouseenter", () => (isHovering = true));
+    el.addEventListener("mouseleave", () => (isHovering = false));
+
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
   }, []);
 
   const handleActivate = (skill: Skill) => {
     setText(t(`skills.items.${skill.key}.hover`));
-    setExp(
-      t(`skills.items.${skill.key}.experience`) || "Tempo não informado",
-    );
+    setExp(t(`skills.items.${skill.key}.experience`) || "");
   };
 
   return (
@@ -210,7 +192,6 @@ const SkillsSection: React.FC = () => {
               <SkillButton
                 key={`${skill.id}-${i}`}
                 onMouseEnter={() => handleActivate(skill)}
-                onClick={() => handleActivate(skill)}
               >
                 <img src={skill.image} alt={skill.id} />
               </SkillButton>
