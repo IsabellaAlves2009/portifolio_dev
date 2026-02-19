@@ -34,25 +34,25 @@ let theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        "*": {
-          boxSizing: "border-box",
-        },
         "*, *::before, *::after": {
           boxSizing: "border-box",
         },
+
         html: {
           width: "100%",
           overflowX: "hidden",
         },
+
         body: {
-          width: "100%",
           margin: 0,
           padding: 0,
+          width: "100%",
           overflowX: "hidden",
         },
+
         "#root": {
           width: "100%",
-          maxWidth: "100vw",
+          minHeight: "100vh",
           overflowX: "hidden",
         },
       },
