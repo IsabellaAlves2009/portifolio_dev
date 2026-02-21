@@ -46,7 +46,7 @@ const skills: Skill[] = [
 
 const loopSkills = [...skills, ...skills];
 
-/* ================= STYLES ================= */
+/* ================= STYLES ================== */
 
 const Section = styled.section`
   width: 100%;
